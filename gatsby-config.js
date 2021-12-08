@@ -4,9 +4,9 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Delicia Sonny Wedding`,
-    description: `Delicia Sonny Wedding`,
-    author: `@sonnylazuardi`
+    title: `Firda Ardyan Wedding`,
+    description: `Firda Ardyan Wedding`,
+    author: `@ardyanfalah`
   },
   plugins: [
     { resolve: `gatsby-plugin-emotion` },

@@ -13,7 +13,7 @@ const App = () => {
   const [showGiving, setShowGiving] = React.useState(false)
   return (
     <Layout css={tw`min-h-screen bg-gold-100 overflow-hidden relative`}>
-      <div tw="absolute -top-16 -right-16 w-48 h-48 bg-cover transform rotate-180 bg-gingko z-10" />
+      <div tw="absolute -top-16 -right-16 w-48 h-48 bg-cover transform rotate-180 bg-kmbg2 z-10" />
       <div
         className="container"
         tw="mx-auto flex flex-col items-center relative"
@@ -37,7 +37,9 @@ const App = () => {
       </div>
       <div tw="py-24 bg-white relative">
         <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
-        <div tw="absolute -top-36 -left-16 w-48 h-48 bg-cover transform bg-gingko" />
+        {/* <div tw="absolute -top-36 -left-16 w-48 h-48 bg-cover rotate-180 z-10 transform bg-kmbg4" /> */}
+        <div tw="absolute -top-16 -left-20 w-56 h-20 bg-cover bg-no-repeat transform rotate-90  bg-kmbg4 z-10" />
+
         <div className="container" tw="mx-auto items-center pb-12 px-4 sm:px-0">
           <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12">
             Wedding Schedule
