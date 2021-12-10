@@ -27,25 +27,26 @@ const Rsvp = () => {
   const { register, errors, handleSubmit } = useForm()
 
   const onSubmit = (data) => {
+    console.log("supabase", process.env.GATSBY_SUPABASE_HOST)
     let loadingToast = toast.loading('Please wait...')
-    if (!data.person) data.person = 0
-    supabase
-      .from('rsvp')
-      .insert([data])
-      .then(({ data, error }) => {
-        if (!error) {
-          if (data[0]) {
-            toast.success('Please check your email.', {
-              id: loadingToast
-            })
-          }
-          navigate('#schedule')
-        } else {
-          toast.error(error.message, {
-            id: loadingToast
-          })
-        }
-      })
+    // if (!data.person) data.person = 0
+    // supabase
+    //   .from('rsvp')
+    //   .insert([data])
+    //   .then(({ data, error }) => {
+    //     if (!error) {
+    //       if (data[0]) {
+    //         toast.success('Please check your email.', {
+    //           id: loadingToast
+    //         })
+    //       }
+    //       navigate('#schedule')
+    //     } else {
+    //       toast.error(error.message, {
+    //         id: loadingToast
+    //       })
+    //     }
+    //   })
   }
 
   React.useEffect(() => {
