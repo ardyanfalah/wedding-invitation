@@ -8,6 +8,7 @@ const Modal = ({ setShowModal }) => {
   const [pin, setPin] = React.useState('')
   const onSubmit = () => {
     toast.dismiss()
+    console.log(process.env.GATSBY_PIN_CODE)
     if (pin === process.env.GATSBY_PIN_CODE) {
       navigate(`/rsvp?pin=${pin}`)
       toast.success('Welcome... Please fill the RSVP form.')
