@@ -319,7 +319,7 @@ const Rsvp = () => {
             </div>
           </div>
           <div tw="">
-            {/* {typeof window !== 'undefined' && (
+            {typeof window !== 'undefined' && (
               <Map center={position} zoom={12} scrollWheelZoom={false}>
                 <TileLayer
                   url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
@@ -330,7 +330,7 @@ const Rsvp = () => {
                   <Popup>Kamaya Bali Wedding</Popup>
                 </Marker>
               </Map>
-            )} */}
+            )}
           </div>
         </div>
       </div>
