@@ -15,9 +15,13 @@ const position = [-8.816462, 115.088558]
 
 import { createClient } from '@supabase/supabase-js'
 
+// const supabase = createClient(
+//   process.env.GATSBY_SUPABASE_HOST,
+//   process.env.GATSBY_SUPABASE_KEY
+// )
 const supabase = createClient(
-  process.env.GATSBY_SUPABASE_HOST,
-  process.env.GATSBY_SUPABASE_KEY
+  "https://fgvgwxmmfkaqeddblxcc.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzOTEyODE4OSwiZXhwIjoxOTU0NzA0MTg5fQ.6Jx83E9R0qL8a4fA38P38Fal07oB-lgquZZNcKRUjnM"
 )
 
 const Rsvp = () => {
