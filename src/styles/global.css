@@ -94,8 +94,11 @@ body {
 
 .subtitle {
   padding: 35px;
-  color: #b07c34;
-  font-size: 1.3rem;
+  padding-bottom: 0;
+  font-family: 'dosis';
+  font-weight: 700;
+  color: #63402f;
+  font-size: 1.5rem;
 }
 
 .title-identity {

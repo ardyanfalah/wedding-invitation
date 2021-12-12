@@ -1,7 +1,7 @@
 import React from 'react'
 import tw from 'twin.macro'
 import Iframe from 'react-iframe'
-import { Logo, Layout, Button, Link } from '../components'
+import { Logo, Layout, Button, Link, LazyImage, LazyImageNonStyle } from '../components'
 import { Player } from '@lottiefiles/react-lottie-player'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendar, faCalendarAlt, faClock } from '@fortawesome/free-regular-svg-icons'
@@ -9,7 +9,7 @@ import { faMapMarker } from '@fortawesome/free-solid-svg-icons'
 import { createClient } from '@supabase/supabase-js'
 import { useForm } from 'react-hook-form'
 import toast, { Toaster } from 'react-hot-toast'
-import { Provider } from 'react-supabase'
+import styled, { createGlobalStyle } from "styled-components";
 
 import GroomsBride from '../images/groomsbride.png'
 import QRImage from '../images/qrbca.png'
@@ -24,6 +24,7 @@ import ring from '../images/ring.png'
 import aisle from '../images/aisle.png'
 import Butterfly from '../images/butterfly.json'
 import Modal from '../components/Modal'
+import { photos } from "./photos";
 
 
 const supabase = createClient(
@@ -31,6 +32,21 @@ const supabase = createClient(
   process.env.GATSBY_SUPABASE_KEY
 )
 
+const Global = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+`;
+
+const Grid = styled.div`
+  display: grid;
+  padding: 16px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0px;
+`;
 
 const App = () => {
   const [showModal, setShowModal] = React.useState(false)
@@ -83,6 +99,8 @@ const App = () => {
 
   return (
     <Layout css={tw`min-h-screen bg-gold-100 overflow-hidden relative`}>
+      <Global />
+
       <div tw="absolute -top-16 -right-16 w-48 h-48 bg-cover transform rotate-180 bg-kmbg2 z-10" />
       <div
         className="container"
@@ -91,15 +109,18 @@ const App = () => {
         {/* <div tw="p-5 block mt-24">
           <Logo />
         </div> */}
-        <div className='container ' tw="text-center">
-          <h1 className='subtitle'></h1>
+        <div className='container ' tw="text-center mt-10">
+          <h4 className='subtitle'>The Wedding of</h4>
           <h2 className='title'>Firda</h2>
           <h2 className='title'>&</h2>
           <h2 className='title'>Ardyan</h2>
 
         </div>
-        <div tw="w-full sm:w-3/5 -mt-8">
-          <img src={couple1} />
+        <div tw="w-full sm:w-3/5 ">
+          <LazyImageNonStyle
+            src={couple2}
+          />
+          {/* <img src={couple1} /> */}
         </div>
 
         <div tw="w-20 h-20 absolute ml-40 top-32">
@@ -116,7 +137,11 @@ const App = () => {
         <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
         <div className="container" tw="mx-auto items-center pb-12 px-4 sm:px-0">
           <div tw='px-8'>
-            <img src={bismillah} />
+
+            {/* <img src={bismillah} /> */}
+            <LazyImageNonStyle
+              src={bismillah}
+            />
           </div>
 
 
@@ -180,9 +205,9 @@ const App = () => {
                       <tbody><tr>
                         <th tw='w-1/5'>  <img src={ring} width="100%" /></th>
                         <th></th>
-                        <th tw='w-4/5'><p className='title-identity ' tw='text-xl'><b>Akad Pernikahan</b></p></th>
+                        <th tw='w-4/5'><p className='title-identity ' tw='text-xl text-left'><b>Akad Pernikahan</b></p></th>
                       </tr>
-                        <tr className='title-identity '>
+                        <tr className='title-identity' tw='text-left'>
                           <td></td>
                           <td><FontAwesomeIcon icon={faCalendarAlt} /></td>
                           <td >Minggu, 19 Desember 2021</td>
@@ -192,7 +217,7 @@ const App = () => {
                           <td><br /></td>
                           <td><br /></td>
                         </tr>
-                        <tr className='title-identity '>
+                        <tr className='title-identity ' tw='text-left'>
                           <td></td>
                           <td><FontAwesomeIcon icon={faClock} /></td>
                           <td>09.00 WIB</td>
@@ -202,22 +227,22 @@ const App = () => {
                           <td><br /></td>
                           <td><br /></td>
                         </tr>
-                        <tr className='title-identity '>
+                        <tr className='title-identity ' tw='text-left'>
                           <td></td>
                           <td><FontAwesomeIcon icon={faMapMarker} /></td>
                           <td>Rumah Makan Sarirasa Cijere</td>
                         </tr>
-                        <tr className='title-identity '>
+                        <tr className='title-identity ' tw='text-left'>
                           <td></td>
                           <td></td>
                           <td>Kp Cijere, RT.06/RW.03, Cintakarya,</td>
                         </tr>
-                        <tr className='title-identity '>
+                        <tr className='title-identity ' tw='text-left'>
                           <td></td>
                           <td></td>
                           <td>Sindangkerta</td>
                         </tr>
-                        <tr className='title-identity '>
+                        <tr className='title-identity ' tw='text-left'>
                           <td></td>
                           <td></td>
                           <td>Kabupaten Bandung Barat</td>
@@ -338,7 +363,7 @@ const App = () => {
           ) : null}
         </div>
       </div>
-      <div tw="py-24  relative">
+      <div tw="py-12  relative">
         <div tw="absolute -top-24 -left-16 w-48 h-48 bg-cover transform bg-gingko" />
         <div
           className="container"
@@ -347,8 +372,8 @@ const App = () => {
           <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12 mt-12">
             Location
           </div>
-          <div tw="font-poppin font-semibold mb-2">Sarirasa Ayam Kampung Cijere</div>
-          <div tw="font-poppin mb-4 text-sm">
+          <div className='title-identity ' tw="text-xl font-semibold mb-2">Sarirasa Ayam Kampung Cijere</div>
+          <div className='title-identity ' tw="text-xl mb-4 text-sm">
             Kp Cijere, Desa, RT.06/RW.03, Cintakarya, Sindangkerta
             <br />
             Kabupaten Bandung Barat, Jawa Barat 40563
@@ -373,23 +398,26 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div tw="py-24 bg-white relative">
+      <div tw="py-12 bg-white relative">
         <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
-        <div tw="grid grid-cols-2 gap-4">
-          <div>01</div>
-          <div>01</div>
-          <div>01</div>
-          <div>01</div>
-          <div>01</div>
-          <div>01</div>
-          <div>01</div>
-          <div>01</div>
-          <div>09</div>
+        <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12 mt-12">
+          Gallery
         </div>
+        <Grid>
+          {[...Array(10).keys()].map(i => (
+            <LazyImage
+              key={i}
+              src={`https://picsum.photos/1000/1000?random=${i}`}
+              alt={`Random image ${i}`}
+            />
+          ))}
+        </Grid>
       </div>
-      <div tw="py-24  relative">
+      <div tw="py-12  relative">
         <div>
-
+          <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12 mt-12">
+            Message
+          </div>
           <div tw="rounded-b-lg  mx-4 mt-4 ">
 
 
@@ -445,8 +473,8 @@ const App = () => {
                             <img src={ring} tw='w-8' width="25px" />
                           </div>
                         </td>
-                        <td className='message' >
-                          <div className="wishdisplayname">
+                        <td className='message' tw='text-left'>
+                          <div className="wishdisplayname" tw='font-bold'>
                             {post.name}
                           </div>
                           <div tw='pb-4'>
