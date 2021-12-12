@@ -87,6 +87,11 @@ body {
   height: 1em;
 }
 
+.explainbride {
+  font-family: 'dosis';
+
+}
+
 .subtitle {
   padding: 35px;
   color: #b07c34;
