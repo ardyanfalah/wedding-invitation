@@ -373,36 +373,38 @@ const App = () => {
       <div tw="py-24  relative">
         <div>
 
-          <section tw="rounded-b-lg  mt-4 ">
+          <div tw="rounded-b-lg  mx-4 mt-4 ">
 
 
             <form onSubmit={handleSubmit(onSubmit)}><input type="hidden" />
-              <textarea tw="w-full shadow-inner p-4 border-0 mb-4 rounded-lg  text-2xl" placeholder="Ask questions here." id="comment_content" spellcheck="false"></textarea>
               <div tw="font-semibold font-poppin text-sm">
-                <div tw="mb-10 ">
+                <div tw="mb-5 ">
                   <label>Full Name</label>
                   <input
                     name="name"
                     ref={register({ required: true })}
                     css={tw`focus:ring-1 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md p-4 mb-4`}
                     type="text"
-                    aria-label="Full Name (Nama Lengkap)"
-                    placeholder="Full Name (Nama Lengkap)"
+                    aria-label="Nama."
+                    placeholder="Nama."
                   />
                   <div tw="text-xs text-gold-900">
                     {errors.name && 'Your Name is required'}
                   </div>
                 </div>
-                <div tw="mb-10 ">
-                  <label>Full Name</label>
-                  <input
-                    name="name"
+                <div tw="mb-5 ">
+                  <label>Ucapan</label>
+                  <textarea
+                    name="desc"
                     ref={register({ required: true })}
-                    css={tw`focus:ring-1 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md p-4 mb-4`}
-                    type="text"
-                    aria-label="Full Name (Nama Lengkap)"
-                    placeholder="Full Name (Nama Lengkap)"
-                  />
+                    tw="w-full shadow-inner p-4 border-0 mb-4 rounded-lg  text-sm"
+                    aria-label="Ucapan Doa dan Harapan"
+                    placeholder="Ucapan Doa dan Harapan"
+                    rows={5}
+                    cols={5}
+                    id="comment_content"
+                    spellcheck="false"></textarea>
+
                   <div tw="text-xs text-gold-900">
                     {errors.name && 'Your Name is required'}
                   </div>
@@ -412,6 +414,31 @@ const App = () => {
 
               {/* <button tw="font-bold py-2 px-4 w-full bg-purple-400 text-lg text-white shadow-md rounded-lg ">Comment </button> */}
             </form>
+
+
+
+            <table tw='mt-10'>
+              <tbody>
+                <tr>
+                  <td valign="top">
+                    <div tw='w-8'>
+
+                      <img src={ring} tw='w-8' width="25px" />
+                    </div>
+                  </td>
+                  <td className='message' >
+                    <div className="wishdisplayname">
+                      Riyandanu
+                    </div>
+                    <div tw='pb-4'>
+                      Selamat untuk Leia dan Pati, Semoga dilancarkan segala urusannya yaa, kelak menjadi keluarga yang Sakinah Mawadah Warohmah, selalu diberikan kebahagiaan dan keberkahan selalu, serta cepet dapet momongan, aamiin
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
 
             <div id="task-comments" tw="pt-4">
               <div tw="bg-white rounded-lg p-3  flex flex-col justify-center items-center md:items-start shadow-lg mb-4">
@@ -435,11 +462,120 @@ const App = () => {
 
               </div>
             </div>
-          </section>
+          </div>
 
         </div>
       </div>
+      <div tw="py-24 bg-white relative" >
+        <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
+        {/* <div tw="absolute -top-36 -left-16 w-48 h-48 bg-cover rotate-180 z-10 transform bg-kmbg4" /> */}
+        {/* <div tw="absolute -top-16 -left-24 w-56 h-20 bg-cover bg-no-repeat transform rotate-90  bg-kmbg4 z-10" /> */}
 
+        <div className="container" tw="mx-auto items-center pb-12 px-4 sm:px-0">
+          <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12">
+            Wedding Schedule
+          </div>
+
+          <div tw="text-center">
+            Due to the current situation, we opted for an intimate wedding
+            ceremony with only immediate family present. Hence, we humbly
+            solicit your presence through the link below.
+          </div>
+          <div tw="grid grid-cols-2 gap-4 text-center font-poppin text-gold-900 py-20">
+            <div tw="col-span-full sm:col-span-1 flex flex-col items-center justify-center text-3xl tracking-widest sm:mb-0 mb-12 font-bold">
+              HOLY
+              <br />
+              MATRIMONY
+            </div>
+            <div tw="col-span-full sm:col-span-1 text-2xl tracking-widest font-poppin">
+              <div tw="text-lg">SATURDAY</div>
+              <div tw="font-bold">20.03.2021</div>
+              <div tw="text-lg">15.30 WIB</div>
+              <div tw="text-lg mb-4">16.30 SGT</div>
+              <div tw="px-12">
+                <div tw="flex mb-4">
+                  <Link isPrimary={true} href="https://youtu.be/NDTuzo31Hlw">
+                    Live Stream
+                  </Link>
+                </div>
+                <div tw="flex">
+                  <Link
+                    isSecondary={true}
+                    href="https://www.google.com/calendar/render?action=TEMPLATE&text=Delicia+%26+Sonny+Wedding&details=Live+Streaming%3A+https%3A%2F%2Fyoutu.be%2FNDTuzo31Hlw&location=Bali&dates=20210320T083000Z%2F20210320T100000Z"
+                  >
+                    Add to Calendar
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div tw="grid grid-cols-2 gap-4 text-center font-poppin text-gold-900 py-20">
+            <div tw="col-span-full sm:col-span-1 flex items-center justify-center text-3xl tracking-widest sm:mb-0 mb-12 font-bold">
+              WEDDING
+              <br />
+              RSVP
+            </div>
+            <div tw="col-span-full sm:col-span-1 text-2xl tracking-widest">
+              <div tw="font-brittany text-4xl mb-8">Invitation Only</div>
+              <div tw="px-12">
+                <Button isSecondary={true} onClick={() => setShowModal(true)}>
+                  RSVP
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div >
+      <div tw="py-24 bg-white bg-opacity-30 relative">
+        <div tw="absolute -top-24 -right-16 w-48 h-48 bg-cover transform rotate-180 bg-gingko" />
+        <div
+          className="container"
+          tw="mx-auto items-center pb-12 px-4 sm:px-0 relative"
+        >
+          <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-24 mt-12">
+            Our Little Story
+          </div>
+          <div
+            tw="mx-auto w-full leading-loose font-sans p-1"
+            style={{ maxWidth: 640 }}
+          >
+            <img src="/images/story.png" tw="w-full" />
+          </div>
+        </div>
+      </div>
+      <div tw="py-24 bg-white relative">
+        <div tw="absolute -top-24 -left-16 w-48 h-48 bg-cover transform bg-gingko" />
+        <div
+          className="container"
+          tw="mx-auto items-center pb-12 px-4 sm:px-0 relative"
+        >
+          <Button isSecondary={true} onClick={() => setShowGiving(!showGiving)}>
+            Electronic Giving
+          </Button>
+          {showGiving ? (
+            <>
+              <div
+                tw="mx-auto w-full p-4 leading-loose font-sans items-center justify-center text-center"
+                style={{ maxWidth: 640 }}
+              >
+                <div tw="">Transfer via OCBC NISP QR</div>
+                <div tw="font-bold text-2xl">545-810-22349-9</div>
+                <div tw="mb-4 font-bold">Delicia Ulyta</div>
+                <img src={QRImage} tw="mx-auto w-80 mb-16 rounded-lg" />
+
+                <div tw="">Transfer via BCA</div>
+                <div tw="font-bold text-2xl">8090138651</div>
+                <div tw="font-bold mb-16">Sonny Lazuardi Hermawan</div>
+
+                <div tw="">Transfer via PayNow</div>
+                <div tw="flex items-center justify-center">
+                  <img src={Paynow} tw="mx-auto w-80 mb-16 rounded-lg" />
+                </div>
+              </div>
+            </>
+          ) : null}
+        </div>
+      </div>
       <div tw="py-24 bg-gold-100 relative text-center font-sans">
         © 2021 by{' '}
         <a href="https://sonnylab.com" tw="font-semibold">
