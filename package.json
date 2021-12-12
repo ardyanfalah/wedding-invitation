@@ -39,6 +39,7 @@
     "react-hot-toast": "^1.0.1",
     "react-iframe": "^1.8.0",
     "react-leaflet": "2.4.0",
+    "react-photo-gallery": "^8.0.0",
     "tailwindcss": "^2.0.1",
     "twin.macro": "^2.0.1",
     "use-query-params": "^1.1.9"
