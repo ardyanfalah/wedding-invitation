@@ -23,6 +23,13 @@ module.exports = {
         kmbg4: "url('/images/kmbg4.png')",
         kmbg5: "url('/images/kmbg5.png')",
         kmbg6: "url('/images/kmbg6.png')",
+        couple1: "url('/images/couple1.png')",
+        couple2: "url('/images/couple2.png')",
+        roundedArdy: "url('/images/rounded-ardy.png')",
+        roundedFirda: "url('/images/rounded-firda.png')",
+        squareArdy: "url('/images/squar-ardy.png')",
+        squareFirda: "url('/images/square-firda.png')",
+
 
 
       }),
@@ -34,5 +41,22 @@ module.exports = {
       }
     }
   },
-  plugins: [require('@tailwindcss/custom-forms')]
+  plugins: [require('@tailwindcss/custom-forms'),
+  plugin(function ({ addComponents, addUtilities, theme }) {
+   
+    addComponents({
+      '.card': {
+        backgroundColor: theme('colors.white'),
+        borderRadius: theme('borderRadius.lg'),
+        padding: theme('spacing.6'),
+        boxShadow: theme('boxShadow.xl'),
+      }
+    })
+
+    addUtilities({
+      '.content-auto': {
+        contentVisibility: 'auto',
+      }
+    })
+  })]
 }
