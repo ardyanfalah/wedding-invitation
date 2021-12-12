@@ -33,6 +33,11 @@ body {
   .container {
     max-width: 640px
   }
+
+  .cardevent {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -53,6 +58,15 @@ body {
   }
 }
 
+.card-schedule {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #D6CFC1;
+}
+
+.map {
+  width: 100%;
+  height: 30rem;
+}
 
 .title {
   font-family: 'Rouge Script', sans-serif;

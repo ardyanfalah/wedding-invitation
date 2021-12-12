@@ -2,7 +2,7 @@ import React from 'react'
 import tw from 'twin.macro'
 import { Logo, Layout, Button, Link } from '../components'
 import GroomsBride from '../images/groomsbride.png'
-import QRImage from '../images/qrocbc.png'
+import QRImage from '../images/qrbca.png'
 import Paynow from '../images/paynow.jpg'
 import Googlepay from '../images/googlepay.jpg'
 import couple1 from '../images/couple1.png'
@@ -10,10 +10,15 @@ import couple2 from '../images/couple2.png'
 import bismillah from '../images/bismillah.png'
 import roundedArdy from '../images/rounded-ardy.png'
 import roundedFirda from '../images/rounded-firda.png'
-
+import ring from '../images/ring.png'
+import aisle from '../images/aisle.png'
 import { Player } from '@lottiefiles/react-lottie-player'
 import Butterfly from '../images/butterfly.json'
 import Modal from '../components/Modal'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCalendar, faCalendarAlt, faClock } from '@fortawesome/free-regular-svg-icons'
+import { faMapMarker } from '@fortawesome/free-solid-svg-icons'
+import Iframe from 'react-iframe'
 const App = () => {
   const [showModal, setShowModal] = React.useState(false)
   const [showGiving, setShowGiving] = React.useState(false)
@@ -87,7 +92,7 @@ const App = () => {
 
         </div>
       </div>
-      <div tw="py-24 bg-white relative">
+      <div tw="py-24  relative">
         <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
         {/* <div tw="absolute -top-36 -left-16 w-48 h-48 bg-cover rotate-180 z-10 transform bg-kmbg4" /> */}
         {/* <div tw="absolute -top-16 -left-24 w-56 h-20 bg-cover bg-no-repeat transform rotate-90  bg-kmbg4 z-10" /> */}
@@ -96,145 +101,243 @@ const App = () => {
           <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12">
             Wedding Schedule
           </div>
-          <div className='card' tw=''>
-            <h4>Test</h4>
-          </div>
-          {/* <div class="cardevent">
-            <div class="row">
-              <div class="column">
-                    <div class="card">
+          {/* <div>
+            <div className='card card-schedule' tw='card'>
+              <h4>Test <FontAwesomeIcon icon={faCalendarAlt} /></h4>
+            </div>
+            <div className='card card-schedule' tw='card'>
+              <h4>Test</h4>
+            </div>
+          </div> */}
+          <div className="cardevent" >
+            <div className="row" tw='flex flex-col'>
+              <div className="column" tw='mb-10'>
+                <div className="card card-schedule" tw='card'>
+                  <div className="containerijabwd" tw='ml-2'>
 
-                        <div class="containerijabwd">
-
-                            <table style="color: #63402f;">
-                                <tbody><tr>
-                                    <th style="width: 20%"><img src="https://nikahankami.com/assets/de18wdakad.png" width="100%"></th>
-                                    <th></th>
-                                    <th style="width: 80%"><p style="font-size: 18px; font-family: dosis; color: #63402f;"><b>Akad Pernikahan</b></p></th>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><i class="fa fa-calendar"></i></td>
-                                    <td>Minggu, 26 Desember 2021</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><br></td>
-                                    <td><br></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><i class="fa fa-clock-o"></i></td>
-                                    <td>08.00 WIB</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><br></td>
-                                    <td><br></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><i class="fa fa-map-marker"></i></td>
-                                    <td>Gedung Achmad Yani</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Jl. Jend. Gatot Soebroto,</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Jurangombo Utara,</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Magelang</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><br></td>
-                                    <td><br></td>
-                                </tr>
-                                <!-- <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td><a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=MWZkMWVyODI1cmJzNG9zNzhjaDY2Y25udjEgYWRtaW4tbmlrYWhhbmthbWlAem1haWwubXkuaWQ&tmsrc=admin-nikahankami%40zmail.my.id" target="_blank" style="background-color: #b8765e; font-family: dosis; font-size: 18px; color: white; padding: 18px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 8px"><strong>SaveTheDate</strong></a></td>
-                                </tr> -->
-                            </tbody></table>
-                        </div>
-                    </div>
+                    <table>
+                      <tbody><tr>
+                        <th tw='w-1/5'>  <img src={ring} width="100%" /></th>
+                        <th></th>
+                        <th tw='w-4/5'><p ><b>Akad Pernikahan</b></p></th>
+                      </tr>
+                        <tr>
+                          <td></td>
+                          <td><FontAwesomeIcon icon={faCalendarAlt} /></td>
+                          <td>Minggu, 26 Desember 2021</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><br /></td>
+                          <td><br /></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><FontAwesomeIcon icon={faClock} /></td>
+                          <td>08.00 WIB</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><br /></td>
+                          <td><br /></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><FontAwesomeIcon icon={faMapMarker} /></td>
+                          <td>Gedung Achmad Yani</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td>Jl. Jend. Gatot Soebroto,</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td>Jurangombo Utara,</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td>Magelang</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><br /></td>
+                          <td><br /></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td ><div tw="flex ">
+                            <Link
+                              isSmall={true}
+                              isPrimary={true}
+                              href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Akad+Nikah+Firda+%26+Ardyan&location=https://goo.gl/maps/zfU5YT6uRSWKd1G68&dates=20211219T020000Z/20211219T040000Z"
+                            >
+                              Save The Date
+                            </Link>
+                          </div></td>
+                        </tr>
+                      </tbody></table>
+                  </div>
+                </div>
 
               </div>
 
-              <div class="column">
-                    <div class="card">
-                          <div class="containerweddingwd">
+              <div className="column">
+                <div className="card card-schedule" tw='card'>
+                  <div className="containerweddingwd" tw='mr-2'>
 
-                                <table style="color: #63402f;" align="right">
-                                    <tbody><tr>
-                                        <th style="width: 80%;" align="right"><p style="font-size: 18px; font-family: dosis; color: #63402f; text-align: right;"><b>Resepsi Pernikahan</b></p></th>
-                                        <th></th>
-                                        <th style="width: 20%"><img src="https://nikahankami.com/assets/de18wdresepsi.png" width="100%"></th>
-                                    </tr>
-                                    <tr align="right">
-                                        <td>Minggu, 26 Desember 2021</td>
-                                        <td><i class="fa fa-calendar"></i></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><br></td>
-                                        <td><br></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr align="right">
-                                        <td>13.00 - 15.00 WIB</td>
-                                        <td><i class="fa fa-clock-o"></i></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><br></td>
-                                        <td><br></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr align="right">
-                                        <td>Gedung Achmad Yani</td>
-                                        <td><i class="fa fa-map-marker"></i></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr align="right">
-                                        <td>Jl. Jend. Gatot Soebroto,</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr align="right">
-                                        <td>Jurangombo Utara,</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr align="right">
-                                        <td>Magelang</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr align="right">
-                                        <td><br/></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr align="right">
-                                        <td><a href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=MjNtdjU4dTNxazQ1dGhtdGk2aWVtYmozczEgYmxrb2M5ZHFvcGs3a2trNm9nNnAzNDlzaDRAZw&amp;tmsrc=blkoc9dqopk7kkk6og6p349sh4%40group.calendar.google.com" target="_blank" style="background-color: #b8765e; font-family: dosis; font-size: 18px; color: white; padding: 18px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 8px"><strong>SaveTheDate</strong></a></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody></table>
-                        <div style="clear: both;"></div>
-                    </div>
-                    </div>
+                    <table tw='text-right'>
+                      <tbody><tr>
+                        <th tw='text-right w-4/5'><p ><b>Resepsi Pernikahan</b></p></th>
+                        <th></th>
+                        <th tw='w-1/5'><img src={aisle} width="100%" /></th>
+                      </tr>
+                        <tr tw='text-right'>
+                          <td>Minggu, 26 Desember 2021</td>
+                          <td><FontAwesomeIcon icon={faCalendarAlt} /></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td><br /></td>
+                          <td><br /></td>
+                          <td></td>
+                        </tr>
+                        <tr tw='text-right'>
+                          <td>13.00 - 15.00 WIB</td>
+                          <td><FontAwesomeIcon icon={faClock} /></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td><br /></td>
+                          <td><br /></td>
+                          <td></td>
+                        </tr>
+                        <tr tw='text-right'>
+                          <td>Gedung Achmad Yani</td>
+                          <td><FontAwesomeIcon icon={faMapMarker} /></td>
+                          <td></td>
+                        </tr>
+                        <tr tw='text-right'>
+                          <td>Jl. Jend. Gatot Soebroto,</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr tw='text-right'>
+                          <td>Jurangombo Utara,</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr tw='text-right'>
+                          <td>Magelang</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr tw='text-right'>
+                          <td><br /></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr tw='text-right w-1/5'>
+                          <td>
+                            <Link
+                              isSecondary={true}
+                              isSmall={true}
+                              href="https://www.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Firda+%26+Ardyan&location=https%3A%2F%2Fgoo.gl%2Fmaps%2FzfU5YT6uRSWKd1G68&dates=20211219T040000Z%2F20211219T080000Z"
+                            >
+                              Add to Calendar
+                            </Link></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody></table>
+                  </div>
+                </div>
               </div>
             </div>
-        </div> */}
+          </div>
+        </div>
+      </div>
+      <div tw="py-24 bg-white relative">
+        <div tw="absolute -top-24 -left-16 w-48 h-48 bg-cover transform bg-gingko" />
+        <div
+          className="container"
+          tw="mx-auto items-center pb-12 px-4 sm:px-0 relative"
+        >
+          <Button isSecondary={true} onClick={() => setShowGiving(!showGiving)}>
+            Electronic Giving
+          </Button>
+          {showGiving ? (
+            <>
+              <div
+                tw="mx-auto w-full p-4 leading-loose font-sans items-center justify-center text-center"
+                style={{ maxWidth: 640 }}
+              >
+                <div tw="">Transfer via BCA QR</div>
+                <div tw="font-bold text-2xl">2700427415</div>
+                <div tw="mb-4 font-bold">Firda Meilani Fauziah</div>
+                <img src={QRImage} tw="mx-auto w-80 mb-16 rounded-lg" />
+
+                <div tw="">Transfer via Mandiri</div>
+                <div tw="font-bold text-2xl">130001780613</div>
+                <div tw="font-bold mb-16">Ardyan Hidayatul Falah</div>
+
+              </div>
+            </>
+          ) : null}
+        </div>
+      </div>
+      <div tw="py-24  relative">
+        <div tw="absolute -top-24 -left-16 w-48 h-48 bg-cover transform bg-gingko" />
+        <div
+          className="container"
+          tw="mx-auto items-center pb-12 px-4 sm:px-0 relative text-center"
+        >
+          <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12 mt-12">
+            Location
+          </div>
+          <div tw="font-poppin font-semibold mb-2">Sarirasa Ayam Kampung Cijere</div>
+          <div tw="font-poppin mb-4 text-sm">
+            Kp Cijere, Desa, RT.06/RW.03, Cintakarya, Sindangkerta
+            <br />
+            Kabupaten Bandung Barat, Jawa Barat 40563
+          </div>
+          <div tw="flex mb-4 items-center justify-center">
+            <div tw="py-4">
+              <Link
+                isPrimary={true}
+                href="https://goo.gl/maps/zfU5YT6uRSWKd1G68"
+              >
+                Direction
+              </Link>
+            </div>
+          </div>
+          <div tw="">
+            <div className="google-map">
+              {/* <iframe frameborder="0"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJZVrx5DQo1i0R6sjtcxJobd4" allowfullscreen=""></iframe> */}
+              <Iframe url="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJZVrx5DQo1i0R6sjtcxJobd4"
+
+                className="map" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div tw="py-24 bg-white relative">
+        <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
+        {/* <div tw="absolute -top-36 -left-16 w-48 h-48 bg-cover rotate-180 z-10 transform bg-kmbg4" /> */}
+        {/* <div tw="absolute -top-16 -left-24 w-56 h-20 bg-cover bg-no-repeat transform rotate-90  bg-kmbg4 z-10" /> */}
+        <div tw="grid grid-cols-2 gap-4">
+          <div>01</div>
+          <div>01</div>
+          <div>01</div>
+          <div>01</div>
+          <div>01</div>
+          <div>01</div>
+          <div>01</div>
+          <div>01</div>
+          <div>09</div>
         </div>
       </div>
       <div tw="py-24 bg-white relative">
