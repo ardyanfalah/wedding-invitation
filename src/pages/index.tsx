@@ -101,7 +101,9 @@ const App = () => {
     <Layout css={tw`min-h-screen bg-gold-100 overflow-hidden relative`}>
       <Global />
 
-      <div tw="absolute -top-16 -right-16 w-48 h-48 bg-cover transform rotate-180 bg-kmbg2 z-10" />
+      <div tw="absolute -top-8 -right-4 w-28 h-28 bg-cover bg-no-repeat transform rotate-180  bg-kmbg3 z-10" />
+      <div tw="absolute -top-5 -left-8 w-28 h-28 bg-cover bg-no-repeat transform  rotate-90 bg-kmbg3 z-10" />
+
       <div
         className="container"
         tw="mx-auto flex flex-col items-center relative"
@@ -132,8 +134,11 @@ const App = () => {
             style={{ height: '100%', width: '100%' }}
           ></Player>
         </div>
+
       </div>
+
       <div tw="py-24 bg-white relative">
+
         <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
         <div className="container" tw="mx-auto items-center pb-12 px-4 sm:px-0">
           <div tw='px-8'>
@@ -180,8 +185,9 @@ const App = () => {
       </div>
       <div tw="py-24  relative">
         <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
-        {/* <div tw="absolute -top-36 -left-16 w-48 h-48 bg-cover rotate-180 z-10 transform bg-kmbg4" /> */}
-        {/* <div tw="absolute -top-16 -left-24 w-56 h-20 bg-cover bg-no-repeat transform rotate-90  bg-kmbg4 z-10" /> */}
+        <div tw="absolute -top-24 -right-11 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-20" />
+        <div tw="absolute -top-6 -right-8 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-10" />
+        <div tw="absolute -top-24 right-1 w-24 h-24 bg-contain bg-no-repeat transform rotate-12  bg-daun2 z-0" />
 
         <div className="container" tw="mx-auto items-center pb-12 px-4 sm:px-0">
           <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12">
@@ -335,7 +341,10 @@ const App = () => {
         </div>
       </div>
       <div tw="py-24 bg-white relative">
-        <div tw="absolute -top-24 -left-16 w-48 h-48 bg-cover transform bg-gingko" />
+        <div tw="absolute -top-24 -left-8 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-20" />
+        <div tw="absolute -top-6 -left-11 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-10" />
+        <div tw="absolute -top-24 -left-6 w-24 h-24 bg-contain bg-no-repeat transform rotate-90  bg-daun2 z-0" />
+
         <div
           className="container"
           tw="mx-auto items-center pb-12 px-4 sm:px-0 relative"
@@ -364,7 +373,10 @@ const App = () => {
         </div>
       </div>
       <div tw="py-12  relative">
-        <div tw="absolute -top-24 -left-16 w-48 h-48 bg-cover transform bg-gingko" />
+        <div tw="absolute -top-24 -right-11 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-20" />
+        <div tw="absolute -top-6 -right-8 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-10" />
+        <div tw="absolute -top-24 right-1 w-24 h-24 bg-contain bg-no-repeat transform rotate-12  bg-daun2 z-0" />
+
         <div
           className="container"
           tw="mx-auto items-center pb-12 px-4 sm:px-0 relative text-center"
@@ -389,6 +401,7 @@ const App = () => {
             </div>
           </div>
           <div tw="">
+
             <div className="google-map">
               {/* <iframe frameborder="0"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJZVrx5DQo1i0R6sjtcxJobd4" allowfullscreen=""></iframe> */}
               <Iframe url="https://maps.google.com/maps?q=Sarirasa%20Ayam%20Kampung%20Cijere&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -399,6 +412,10 @@ const App = () => {
         </div>
       </div>
       <div tw="py-12 bg-white relative">
+        <div tw="absolute -top-24 -left-8 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-30" />
+        <div tw="absolute -top-6 -left-11 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-20" />
+        <div tw="absolute -top-24 -left-6 w-24 h-24 bg-contain bg-no-repeat transform rotate-90  bg-daun2 z-10" />
+
         <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
         <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12 mt-12">
           Gallery
@@ -420,6 +437,9 @@ const App = () => {
           </div>
           <div tw="rounded-b-lg  mx-4 mt-4 ">
 
+            <div tw="absolute -top-20 -right-12 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-20" />
+            <div tw="absolute -top-2 -right-9 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-10" />
+            <div tw="absolute -top-20 -right-1 w-24 h-24 bg-contain bg-no-repeat transform rotate-12  bg-daun2 z-0" />
 
             <form id='messageForm' onSubmit={handleSubmit(onSubmit)}><input type="hidden" />
               <div tw="font-semibold font-poppin text-sm">
@@ -501,8 +521,12 @@ const App = () => {
       <div tw="py-24 bg-gold-100 relative text-center font-sans">
         © 2021 by{' '}
         <a href="https://sonnylab.com" tw="font-semibold">
-          sonnylab
+          sonnylab,
         </a>
+        <br />
+        Remake by <span tw='font-semibold'>Ardyan</span>
+        <div tw="absolute -bottom-6 -right-7 w-28 h-28 bg-cover bg-no-repeat transform -rotate-90  bg-kmbg3 z-10" />
+        <div tw="absolute -bottom-8 -left-4 w-28 h-28 bg-cover bg-no-repeat transform  bg-kmbg3 z-10" />
       </div>
       {showModal ? <Modal setShowModal={setShowModal} /> : null}
       <Toaster />
