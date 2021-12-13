@@ -66,6 +66,8 @@ const App = () => {
   };
 
   React.useEffect(() => {
+    setIsPlaying(true)
+    play(audio)
     console.log(photos)
     fetchPosts()
     const mySubscription = supabase

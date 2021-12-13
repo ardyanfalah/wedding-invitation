@@ -33,8 +33,12 @@ const Layout = ({ children, ...rest }) => {
           },
           {
             property: `og:title`,
-            content: defaultTitle
+            content: "Official Wedding Website Firda &amp; Ardyan"
           },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
           {
             property: `og:description`,
             content: metaDescription
