@@ -467,7 +467,7 @@ const App = () => {
               key={i}
               src={i.src}
 
-              alt={`Moment Image ${i}`}
+              alt={`Moment Image `}
             />
           ))}
         </Grid>

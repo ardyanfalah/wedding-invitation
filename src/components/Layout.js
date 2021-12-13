@@ -24,7 +24,7 @@ const Layout = ({ children, ...rest }) => {
   return (
     <div {...rest}>
       <Helmet
-        title={defaultTitle}
+        title={'Official Firda & Ardyan '}
         titleTemplate={defaultTitle}
         meta={[
           {
@@ -76,6 +76,17 @@ const Layout = ({ children, ...rest }) => {
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="google" content="notranslate" />
         <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+        <meta name="description" content="Official Wedding Website Firda Meilani Fauziah with Ardyan Hidayatul Falah"/>
+        <meta property="og:title" content="Official Wedding Website Firda &amp; Ardyan"/>
+        <meta property="og:url" content="https://weddinginvitationmain.gatsbyjs.io/"/>
+        <meta property="og:description" content="Official Wedding Website Firda Meilani Fauziah with Ardyan Hidayatul Falah"/>
+        <meta property="og:image" content="https://weddinginvitationmain.gatsbyjs.io/static/thumbnail.png"></meta>
+        <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+       
+        
+        
+    </head>
       </Helmet>
       <GlobalStyles />
       {children}
