@@ -64,8 +64,7 @@ const App = () => {
   };
 
   React.useEffect(() => {
-    setIsPlaying(true)
-    play(audio)
+
     fetchPosts()
     const mySubscription = supabase
       .from('comment')
