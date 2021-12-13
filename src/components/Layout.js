@@ -44,10 +44,6 @@ const Layout = ({ children, ...rest }) => {
             content: metaDescription
           },
           {
-            property: `og:image`,
-            content: `https://ibb.co/CwSrxR7`
-          },
-          {
             property: `og:type`,
             content: `website`
           },
@@ -84,12 +80,11 @@ const Layout = ({ children, ...rest }) => {
         <meta property="og:title" content="Official Wedding Website Firda &amp; Ardyan"/>
         <meta property="og:url" content="https://weddinginvitationmain.gatsbyjs.io/"/>
         <meta property="og:description" content="Official Wedding Website Firda Meilani Fauziah with Ardyan Hidayatul Falah"/>
-        <meta property="og:image" itemprop="image" content="https://i.ibb.co/MS39vrH/Thumbnail-ready.jpg"></meta>
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Official Wedding Website Firda &amp; Ardyan"></meta>
         <meta property="og:type" content="website" />
         <meta property="og:image:type" content="image/jpeg"/>
-
+        <meta id="og-image" property="og:image" content="../images/thumbnail.jpg" />
         <meta property="og:image:width" content="300"/>
         <meta property="og:image:height" content="300"></meta>
       </Helmet>
