@@ -488,21 +488,21 @@ const App = () => {
             <form id='messageForm' onSubmit={handleSubmit(onSubmit)}><input type="hidden" />
               <div tw="font-semibold font-poppin text-sm">
                 <div tw="mb-5 ">
-                  <label>Full Name</label>
+                  <label className='title-identity' tw='font-semibold text-xl'>Nama</label>
                   <input
                     name="name"
                     ref={register({ required: true })}
                     css={tw`focus:ring-1 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md p-4 mb-4`}
                     type="text"
                     aria-label="Nama."
-                    placeholder="Nama."
+                    placeholder="Masukan nama anda"
                   />
                   <div tw="text-xs text-gold-900">
                     {errors.name && 'Your Name is required'}
                   </div>
                 </div>
                 <div tw="mb-5 ">
-                  <label>Ucapan</label>
+                  <label className='title-identity' tw='font-semibold text-xl'>Ucapan</label>
                   <textarea
                     name="desc"
                     ref={register({ required: true })}
