@@ -428,7 +428,7 @@ const App = () => {
             Location
           </div>
           <div className='title-identity ' tw="text-xl font-semibold mb-2">Sarirasa Ayam Kampung Cijere</div>
-          <div className='title-identity ' tw="text-xl mb-4 text-sm">
+          <div className='title-identity ' tw="text-xl mb-4 ">
             Kp Cijere, Desa, RT.06/RW.03, Cintakarya, Sindangkerta
             <br />
             Kabupaten Bandung Barat, Jawa Barat 40563
