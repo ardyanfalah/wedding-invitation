@@ -87,6 +87,11 @@ const Layout = ({ children, ...rest }) => {
         <meta property="og:image" itemprop="image" content={'../images/thumbnail.jpg'}></meta>
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Official Wedding Website Firda &amp; Ardyan"></meta>
+        <meta property="og:type" content="website" />
+        <meta property="og:image:type" content="image/jpeg"/>
+
+        <meta property="og:image:width" content="300"/>
+        <meta property="og:image:height" content="300"></meta>
       </Helmet>
       <GlobalStyles />
       {children}
