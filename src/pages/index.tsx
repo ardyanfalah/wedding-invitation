@@ -1,27 +1,25 @@
 import React from 'react'
 import tw from 'twin.macro'
 import Iframe from 'react-iframe'
-import { Logo, Layout, Button, Link, LazyImage, LazyImageNonStyle } from '../components'
+import { Countdown, Layout, Button, Link, LazyImage, LazyImageNonStyle } from '../components'
 import { Player } from '@lottiefiles/react-lottie-player'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendar, faCalendarAlt, faClock } from '@fortawesome/free-regular-svg-icons'
+import { faCalendarAlt, faClock, faHeart } from '@fortawesome/free-regular-svg-icons'
 import { faMapMarker } from '@fortawesome/free-solid-svg-icons'
 import { createClient } from '@supabase/supabase-js'
 import { useForm } from 'react-hook-form'
 import toast, { Toaster } from 'react-hot-toast'
 import styled, { createGlobalStyle } from "styled-components";
 
-import GroomsBride from '../images/groomsbride.png'
 import QRImage from '../images/qrbca.png'
-import Paynow from '../images/paynow.jpg'
-import Googlepay from '../images/googlepay.jpg'
-import couple1 from '../images/couple1.png'
 import couple2 from '../images/couple2.png'
 import bismillah from '../images/bismillah.png'
 import roundedArdy from '../images/rounded-ardy.png'
 import roundedFirda from '../images/rounded-firda.png'
 import ring from '../images/ring.png'
 import aisle from '../images/aisle.png'
+import mute from '../images/mute.png'
+import unmute from '../images/unmute.png'
 import Butterfly from '../images/butterfly.json'
 import Modal from '../components/Modal'
 import { photos } from "./photos";
@@ -53,8 +51,18 @@ const App = () => {
   const [showGiving, setShowGiving] = React.useState(false)
   const { register, errors, handleSubmit } = useForm()
   const [posts, setPosts] = React.useState([])
+  const [isPlaying, setIsPlaying] = React.useState(false);
+
+  var audio = new Audio("../images/song.mp3")
+  const audioRef = React.useRef(null);
+  const play = (audio) => {
+    !isPlaying ? audioRef.current.play() : audioRef.current.pause();
+    setIsPlaying(!isPlaying);
+  };
 
   React.useEffect(() => {
+    setIsPlaying(true)
+    play(audio)
     fetchPosts()
     const mySubscription = supabase
       .from('comment')
@@ -338,6 +346,35 @@ const App = () => {
               </div>
             </div>
           </div>
+          <div tw='mt-10'>
+            <div className="explainbride health-advice" >
+              <p><FontAwesomeIcon icon={faHeart} /><br />
+                Guna mencegah penularan covid-19 kami harapkan kedatangan para tamu undangan tetap menerapkan protokol yang berlaku :
+              </p>
+              <div className='advices'>
+                Wajib menggunakan masker
+              </div>
+              <div className='advices'>
+                Menggunakan salam namaste / salam hangat tanpa bersentuhan
+              </div>
+              <div className='advices'>
+                Saling menjaga jarak di dalam acara
+              </div>
+              <div className='advices'>
+                Menjaga kebersihan dengan menggunakan handsanitizer
+              </div>
+            </div>
+            <p className="explainbride" tw='mt-10'>
+              Merupakan suatu kehormatan dan kebahagiaan
+              <br />bagi kami apabila Bapak/Ibu/Saudara(i)
+              <br />berkenan untuk hadir dan memberikan do'a restu
+              <br />
+              kepada kedua mempelai.</p>
+          </div>
+          <div tw='mt-10'>
+
+            <Countdown></Countdown>
+          </div>
         </div>
       </div>
       <div tw="py-24 bg-white relative">
@@ -530,6 +567,24 @@ const App = () => {
       </div>
       {showModal ? <Modal setShowModal={setShowModal} /> : null}
       <Toaster />
+
+      <div className="music-box">
+        <audio
+          src={"../images/song.mp3"}
+          ref={audioRef}
+          loop={true}
+
+        ></audio>
+        {isPlaying ? (
+          <button type="button" className="music" id="unmute2-sound" >
+            <img alt="" onClick={() => play(audio)} src={unmute} width="30" height="30" />
+          </button>
+        ) : (
+          <button type="button" className="music" id="mute-sound" >
+            <img alt="" onClick={() => play(audio)} src={mute} width="30" height="30" />
+          </button>
+        )}
+      </div>
     </Layout >
   )
 }

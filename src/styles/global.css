@@ -113,3 +113,63 @@ body {
 .color-primary {
   color: #b07c34;
 }
+
+.music-box {
+  position: fixed;
+  width: 300px;
+  height: 160px;
+  z-index: 9999999;
+  bottom: 50vh;
+  right: -30vw;
+}
+
+#clockdiv {
+  font-family: 'dosis';
+  color: grey;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+#clockdiv>div {
+  padding: 8px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+#clockdiv div>span {
+  padding: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+#day,
+#hour,
+#minute,
+#second {
+  font-size: 2rem;
+  color: #AA7A32;
+  border-bottom: solid 3px #AA7A32;
+}
+
+.smalltext {
+  padding-top: 2px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.health-advice {
+  background-color: #AA7A32;
+  width: 100%;
+  margin: auto;
+  box-shadow: 1px 1px 5px #888888;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+.advices {
+  padding: 5px;
+  border-bottom: 1px solid #c7c7c7;
+}
