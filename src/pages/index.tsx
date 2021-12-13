@@ -53,7 +53,10 @@ const App = () => {
   const [posts, setPosts] = React.useState([])
   const [isPlaying, setIsPlaying] = React.useState(false);
 
-  var audio = new Audio("../images/song.mp3")
+  var audio = null
+  if (typeof Audio != "undefined") {
+    audio = new Audio("../images/song.mp3")
+  }
   const audioRef = React.useRef(null);
   const play = (audio) => {
     !isPlaying ? audioRef.current.play() : audioRef.current.pause();
