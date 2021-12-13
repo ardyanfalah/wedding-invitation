@@ -594,7 +594,10 @@ const App = () => {
           </button>
         )}
       </div>
-      <iframe src={"../images/silence.mp3"} allow="autoplay" id="audio" hidden></iframe>
+      <div tw='hidden'>
+
+        <iframe className='iframe-silence' tw='hidden' src={"../images/silence.mp3"} allow="autoplay" id="audio" hidden></iframe>
+      </div>
     </Layout >
   )
 }
