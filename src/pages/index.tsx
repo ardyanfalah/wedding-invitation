@@ -163,7 +163,7 @@ const App = () => {
 
 
 
-          <p className='title-identity' tw="text-center text-lg mt-8">
+          <p className='title-identity' tw="text-center text-base mt-8">
             Assalamu'alaikum Warahmatullahi Wabarakatuh.
             <br />
             Dengan memohon rahmat dan ridha Allah swt,
