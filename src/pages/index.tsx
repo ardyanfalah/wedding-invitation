@@ -66,9 +66,7 @@ const App = () => {
   };
 
   React.useEffect(() => {
-    setIsPlaying(true)
-    play(audio)
-    console.log(photos)
+
     fetchPosts()
     const mySubscription = supabase
       .from('comment')
@@ -594,10 +592,7 @@ const App = () => {
           </button>
         )}
       </div>
-      <div tw='hidden'>
 
-        <iframe className='iframe-silence' tw='hidden' src={"../images/silence.mp3"} allow="autoplay" id="audio" hidden></iframe>
-      </div>
     </Layout >
   )
 }
