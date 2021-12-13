@@ -18,6 +18,8 @@ import roundedArdy from '../images/rounded-ardy.png'
 import roundedFirda from '../images/rounded-firda.png'
 import ring from '../images/ring.png'
 import aisle from '../images/aisle.png'
+import akad from '../images/akad.png'
+import resepsi from '../images/resepsi.png'
 import mute from '../images/mute.png'
 import unmute from '../images/unmute.png'
 import Butterfly from '../images/butterfly.json'
@@ -219,7 +221,7 @@ const App = () => {
 
                     <table>
                       <tbody><tr>
-                        <th tw='w-1/5'>  <img src={ring} width="100%" /></th>
+                        <th tw='w-1/5'>  <img src={akad} width="100%" /></th>
                         <th></th>
                         <th tw='w-4/5'><p className='title-identity ' tw='text-xl text-left'><b>Akad Pernikahan</b></p></th>
                       </tr>
@@ -283,7 +285,7 @@ const App = () => {
                       <tbody><tr className='title-identity '>
                         <th tw='text-right w-4/5'><p tw='text-lg'><b>Resepsi Pernikahan</b></p></th>
                         <th></th>
-                        <th tw='w-1/5'><img src={aisle} width="100%" /></th>
+                        <th tw='w-1/5'><img src={resepsi} width="100%" /></th>
                       </tr>
                         <tr className='title-identity ' tw='text-right '>
                           <td>Minggu, 19 Desember 2021</td>
@@ -296,7 +298,7 @@ const App = () => {
                           <td></td>
                         </tr>
                         <tr className='title-identity ' tw='text-right'>
-                          <td>11.00 - 15.00 WIB</td>
+                          <td>11.00 - Selesai</td>
                           <td><FontAwesomeIcon icon={faClock} /></td>
                           <td></td>
                         </tr>
