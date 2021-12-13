@@ -85,13 +85,7 @@ const Layout = ({ children, ...rest }) => {
         <meta property="og:site_name" content="Official Wedding Website Firda &amp; Ardyan"></meta>
         <meta property="og:type" content="website" />
         <meta property="og:image:type" content="image/jpeg"/>
-        <meta id="og-image" property="og:image" content="../images/thumbnail.jpg" />
-        <meta id="og-image" property="og:image" content={"../images/thumbnail.jpg"} />
         <meta id="og-image" property="og:image" content={thumbnail} />
-        <meta id="og-image" property="og:image" content='https://i.ibb.co/MS39vrH/Thumbnail-ready.jpg' />
-        <meta id="og-image" property="og:image" content={`https://i.ibb.co/MS39vrH/Thumbnail-ready.jpg`} />
-
-        <img src="https://i.ibb.co/MS39vrH/Thumbnail-ready.jpg" alt="Thumbnail-ready" border="0"></img>
         <meta property="og:image:width" content="300"/>
         <meta property="og:image:height" content="300"></meta>
       </Helmet>
