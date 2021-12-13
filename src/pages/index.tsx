@@ -80,6 +80,7 @@ const App = () => {
     const { data } = await supabase
       .from('comment')
       .select('*')
+      .order('created_at', { ascending: false })
     setPosts(data)
   }
 
@@ -522,7 +523,7 @@ const App = () => {
               {/* <button tw="font-bold py-2 px-4 w-full bg-purple-400 text-lg text-white shadow-md rounded-lg ">Comment </button> */}
             </form>
 
-            <div tw='mt-10 max-h-96 overflow-auto'>
+            <div className='mxh-50' tw='mt-10  overflow-auto'>
               <table tw=''>
                 <tbody>
                   {posts.map(post => (
