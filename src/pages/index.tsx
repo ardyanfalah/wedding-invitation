@@ -580,7 +580,7 @@ const App = () => {
           src={"../images/song.mp3"}
           ref={audioRef}
           loop={true}
-
+          autoPlay={true}
         ></audio>
         {isPlaying ? (
           <button type="button" className="music" id="unmute2-sound" >
