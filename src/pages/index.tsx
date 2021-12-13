@@ -1,7 +1,7 @@
 import React from 'react'
 import tw from 'twin.macro'
 import Iframe from 'react-iframe'
-import { Countdown, Layout, Button, Link, LazyImage, LazyImageNonStyle } from '../components'
+import { Countdown, Layout, Button, Link, LazyImage, LazyImageNonStyle, Logo } from '../components'
 import { Player } from '@lottiefiles/react-lottie-player'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt, faClock, faHeart } from '@fortawesome/free-regular-svg-icons'
@@ -24,7 +24,7 @@ import mute from '../images/mute.png'
 import unmute from '../images/unmute.png'
 import Butterfly from '../images/butterfly.json'
 import Modal from '../components/Modal'
-import { photos } from "./photos";
+import { photos } from '../components/photos'
 
 
 const supabase = createClient(
@@ -66,7 +66,7 @@ const App = () => {
   };
 
   React.useEffect(() => {
-
+    console.log(photos)
     fetchPosts()
     const mySubscription = supabase
       .from('comment')
@@ -462,11 +462,12 @@ const App = () => {
           Gallery
         </div>
         <Grid>
-          {[...Array(10).keys()].map(i => (
+          {photos.map(i => (
             <LazyImage
               key={i}
-              src={`https://picsum.photos/1000/1000?random=${i}`}
-              alt={`Random image ${i}`}
+              src={i.src}
+
+              alt={`Moment Image ${i}`}
             />
           ))}
         </Grid>
@@ -531,7 +532,9 @@ const App = () => {
                         <td valign="top">
                           <div tw='w-8'>
 
-                            <img src={ring} tw='w-8' width="25px" />
+                            {/* <img src={Logo} tw='w-8' width="25px" /> */}
+                            <Logo />
+
                           </div>
                         </td>
                         <td className='message' tw='text-left'>

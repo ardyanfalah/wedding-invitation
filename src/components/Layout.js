@@ -40,8 +40,8 @@ const Layout = ({ children, ...rest }) => {
             content: metaDescription
           },
           {
-            property: `og:image:url`,
-            content: `https://weddinginvitationmain.gatsbyjs.io/static/thumbnail.png`
+            property: `og:image`,
+            content: `https://ibb.co/CwSrxR7`
           },
           {
             property: `og:type`,
