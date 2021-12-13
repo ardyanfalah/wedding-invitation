@@ -84,7 +84,7 @@ const Layout = ({ children, ...rest }) => {
         <meta property="og:title" content="Official Wedding Website Firda &amp; Ardyan"/>
         <meta property="og:url" content="https://weddinginvitationmain.gatsbyjs.io/"/>
         <meta property="og:description" content="Official Wedding Website Firda Meilani Fauziah with Ardyan Hidayatul Falah"/>
-        <meta property="og:image" itemprop="image" content="https://i.ibb.co/QrB7xB7/Thumbnail-test.jpg"></meta>
+        <meta property="og:image" itemprop="image" content="https://i.ibb.co/MS39vrH/Thumbnail-ready.jpg"></meta>
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Official Wedding Website Firda &amp; Ardyan"></meta>
         <meta property="og:type" content="website" />
