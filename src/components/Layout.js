@@ -85,7 +85,7 @@ const Layout = ({ children, ...rest }) => {
         <meta property="og:site_name" content="Official Wedding Website Firda &amp; Ardyan"></meta>
         <meta property="og:type" content="website" />
         <meta property="og:image:type" content="image/jpeg"/>
-        <meta id="og-image" property="og:image" content={thumbnail} />
+        <meta id="og-image" property="og:image" content="https://cdn.discordapp.com/attachments/748172468291764256/919929165195657326/thumbnail.jpg" />
         <meta property="og:image:width" content="300"/>
         <meta property="og:image:height" content="300"></meta>
       </Helmet>
