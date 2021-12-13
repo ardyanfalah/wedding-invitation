@@ -375,7 +375,7 @@ const App = () => {
               <br />bagi kami apabila Bapak/Ibu/Saudara(i)
               <br />berkenan untuk hadir dan memberikan do'a restu
               <br />
-              kepada kedua mempelai.</p>
+              kepada kami.</p>
           </div>
           <div tw='mt-10'>
 
