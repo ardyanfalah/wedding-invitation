@@ -119,12 +119,6 @@ export const photos = [
     src: "https://i.ibb.co/yWtH90B/SCRT0197.jpg",
     width: 4,
     height: 3
-  },
-  
-  {
-    src: "https://i.ibb.co/zrCvg4f/thumbnail.jpg",
-    width: 4,
-    height: 3
   }
   
 ];
