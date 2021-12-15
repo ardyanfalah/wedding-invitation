@@ -486,7 +486,7 @@ const App = () => {
 
             <form id='messageForm' onSubmit={handleSubmit(onSubmit)}><input type="hidden" />
               <div tw="font-semibold font-poppin text-sm">
-                <div tw="mb-5 ">
+                <div tw="mb-5 text-left">
                   <label className='title-identity' tw='font-semibold text-xl'>Nama</label>
                   <input
                     name="name"
@@ -500,7 +500,7 @@ const App = () => {
                     {errors.name && 'Your Name is required'}
                   </div>
                 </div>
-                <div tw="mb-5 ">
+                <div tw="mb-5 text-left">
                   <label className='title-identity' tw='font-semibold text-xl'>Ucapan</label>
                   <textarea
                     name="desc"
