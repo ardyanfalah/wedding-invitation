@@ -142,7 +142,7 @@ const App = () => {
           {/* <LazyImageNonStyle
             src={couple2}
           /> */}
-          <Img fluid={data}
+          <Img fluid={data.couple2.childImageSharp.fluid}
             alt="couple image" />
           {/* <img src={couple1} /> */}
         </div>
