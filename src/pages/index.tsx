@@ -139,9 +139,9 @@ const App = () => {
 
         </div>
         <div tw="w-full sm:w-3/5 ">
-          <LazyImageNonStyle
+          {/* <LazyImageNonStyle
             src={couple2}
-          />
+          /> */}
           <Img fluid={data}
             alt="couple image" />
           {/* <img src={couple1} /> */}
@@ -613,16 +613,7 @@ export const fluidImage = graphql`
 fragment fluidImage on File {
   childImageSharp {
     fluid(maxWidth: 1000) {
-      base64
-      tracedSVG
-      aspectRatio
-      src
-      srcSet
-      srcWebp
-      srcSetWebp
-      sizes
-      originalImg
-      originalName
+      ...GatsbyImageSharpFluid
     }
   }
 }
