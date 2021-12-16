@@ -10,6 +10,10 @@ import { createClient } from '@supabase/supabase-js'
 import { useForm } from 'react-hook-form'
 import toast, { Toaster } from 'react-hot-toast'
 import styled, { createGlobalStyle } from "styled-components";
+import { StaticImage } from 'gatsby-plugin-image';
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Img from 'gatsby-image'
 
 import QRImage from '../images/qrbca.png'
 import couple2 from '../images/couple2.png'
@@ -48,12 +52,15 @@ const Grid = styled.div`
   grid-gap: 0px;
 `;
 
+
+
 const App = () => {
   const [showModal, setShowModal] = React.useState(false)
   const [showGiving, setShowGiving] = React.useState(false)
   const { register, errors, handleSubmit } = useForm()
   const [posts, setPosts] = React.useState([])
   const [isPlaying, setIsPlaying] = React.useState(false);
+  const data = useStaticQuery(pageQuery)
 
   var audio = null
   if (typeof Audio != "undefined") {
@@ -135,6 +142,8 @@ const App = () => {
           <LazyImageNonStyle
             src={couple2}
           />
+          <Img fluid={data}
+            alt="couple image" />
           {/* <img src={couple1} /> */}
         </div>
 
@@ -599,3 +608,21 @@ const App = () => {
 }
 
 export default App
+
+export const fluidImage = graphql`
+fragment fluidImage on File {
+  childImageSharp {
+    fluid(maxWidth: 1000) {
+      ...GatsbyImageSharpFluid
+    }
+  }
+}
+`;
+
+export const pageQuery = graphql`
+  query {
+    couple2: file(relativePath: { eq: "couple2.png" }) {
+      ...fluidImage
+    }
+  }
+`

@@ -3,7 +3,6 @@ import '../styles/global.css'
 import { GlobalStyles } from 'twin.macro'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
-import thumbnail from '../images/thumbnail.jpg'
 
 const Layout = ({ children, ...rest }) => {
   const { site } = useStaticQuery(
