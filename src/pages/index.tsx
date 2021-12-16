@@ -185,7 +185,7 @@ const App = () => {
 
           <div className='container' tw="mt-8 text-center">
             <div tw='grid justify-items-center'>
-              <Img fluid={data.firdaRounded.childImageSharp.fluid}
+              <Img fluid={data.roundedFirda.childImageSharp.fluid}
                 alt="firda" className='w-50' />
               {/* <img src={roundedFirda} width="50%" alt="" /> */}
 
@@ -199,7 +199,7 @@ const App = () => {
             <div className="explainbride color-primary ">dan</div>
             <br />
             <div tw='grid justify-items-center'>
-              <Img fluid={data.ardyRounded.childImageSharp.fluid}
+              <Img fluid={data.roundedArdy.childImageSharp.fluid}
                 alt="ardy" className='w-50' />
               {/* <img src={roundedArdy} width="50%" alt="" /> */}
               <br />
