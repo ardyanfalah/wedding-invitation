@@ -166,9 +166,11 @@ const App = () => {
           <div tw='px-8'>
 
             {/* <img src={bismillah} /> */}
-            <LazyImageNonStyle
+            {/* <LazyImageNonStyle
               src={bismillah}
-            />
+            /> */}
+            <Img fluid={data.bismillah.childImageSharp.fluid}
+              alt="bismillah" />
           </div>
 
 
@@ -183,7 +185,10 @@ const App = () => {
 
           <div className='container' tw="mt-8 text-center">
             <div tw='grid justify-items-center'>
-              <img src={roundedFirda} width="50%" alt="" />
+              <Img fluid={data.firdaRounded.childImageSharp.fluid}
+                alt="firda" className='w-50' />
+              {/* <img src={roundedFirda} width="50%" alt="" /> */}
+
               <br />
               <span className='brideFront font-rouge-script color-primary' tw='mt-2 text-4xl '>
                 Firda Meilani Fauziah
@@ -193,7 +198,10 @@ const App = () => {
             <br />
             <div className="explainbride color-primary ">dan</div>
             <br />
-            <div tw='grid justify-items-center'><img src={roundedArdy} width="50%" alt="" />
+            <div tw='grid justify-items-center'>
+              <Img fluid={data.ardyRounded.childImageSharp.fluid}
+                alt="ardy" className='w-50' />
+              {/* <img src={roundedArdy} width="50%" alt="" /> */}
               <br />
               <span className='brideFront font-rouge-script color-primary' tw='mt-2 text-4xl'>
                 Ardyan Hidayatul Falah
@@ -622,6 +630,15 @@ fragment fluidImage on File {
 export const pageQuery = graphql`
   query {
     couple2: file(relativePath: { eq: "couple2.png" }) {
+      ...fluidImage
+    }
+    bismillah: file(relativePath: { eq: "bismillah.png" }) {
+      ...fluidImage
+    }
+    roundedArdy: file(relativePath: { eq: "rounded-ardy.png" }) {
+      ...fluidImage
+    }
+    roundedFirda: file(relativePath: { eq: "rounded-firda.png" }) {
       ...fluidImage
     }
   }
