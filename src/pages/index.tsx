@@ -613,7 +613,16 @@ export const fluidImage = graphql`
 fragment fluidImage on File {
   childImageSharp {
     fluid(maxWidth: 1000) {
-      ...GatsbyImageSharpFluid
+      base64
+      tracedSVG
+      aspectRatio
+      src
+      srcSet
+      srcWebp
+      srcSetWebp
+      sizes
+      originalImg
+      originalName
     }
   }
 }
