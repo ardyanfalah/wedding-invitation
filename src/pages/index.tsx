@@ -406,7 +406,7 @@ const App = () => {
                 <img src={QRImage} tw="mx-auto w-80 mb-16 rounded-lg" />
 
                 <div tw="">Transfer via Mandiri</div>
-                <div tw="font-bold text-2xl">130001780613</div>
+                <div tw="font-bold text-2xl">1300017806913</div>
                 <div tw="font-bold mb-16">Ardyan Hidayatul Falah</div>
 
               </div>
