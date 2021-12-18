@@ -21,6 +21,7 @@ const Countdown = ()=> {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [year] = useState(new Date().getFullYear());
 
+
   useEffect(() => {
     setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
@@ -28,11 +29,9 @@ const Countdown = ()=> {
   });
 
   const timerComponents = [];
-
+  
   Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
+
 
     timerComponents.push(
       <span>
@@ -47,7 +46,7 @@ const Countdown = ()=> {
       {timerComponents.length ? (  
       <div id="clockdiv">
       <div>
-          <span class="days" id="day">{timerComponents[0]}</span>
+          <span class="days" id="day">{timerComponents[0] ? timerComponents[0] :"0"  }</span>
           <div class="smalltext">Days</div>
       </div>
       <div>
