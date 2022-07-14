@@ -23,8 +23,12 @@ import resepsi from '../images/resepsi.png'
 import mute from '../images/mute.png'
 import unmute from '../images/unmute.png'
 import Butterfly from '../images/butterfly.json'
+import bgImie from '../images/bgImie.jpeg'
+import ppImie from '../images/ppImie.png'
+
 import Modal from '../components/Modal'
 import { photos } from '../components/photos'
+
 
 
 const supabase = createClient(
@@ -111,31 +115,29 @@ const App = () => {
   }
 
   return (
-    <Layout css={tw`min-h-screen bg-gold-100 overflow-hidden relative`}>
+    <Layout css={tw`min-h-screen  overflow-hidden relative`}>
       <Global />
 
-      <div tw="absolute -top-8 -right-4 w-28 h-28 bg-cover bg-no-repeat transform rotate-180  bg-kmbg3 z-10" />
-      <div tw="absolute -top-5 -left-8 w-28 h-28 bg-cover bg-no-repeat transform  rotate-90 bg-kmbg3 z-10" />
+      {/* <div tw="absolute -top-8 -right-4 w-28 h-28 bg-cover bg-no-repeat transform rotate-180  bg-kmbg3 z-10" />
+      <div tw="absolute -top-5 -left-8 w-28 h-28 bg-cover bg-no-repeat transform  rotate-90 bg-kmbg3 z-10" /> */}
 
       <div
         className="container"
-        tw="mx-auto flex flex-col items-center relative"
+        tw="mx-auto flex flex-col justify-center items-center bg-bgimie bg-cover bg-center bg-no-repeat min-h-screen"
       >
         {/* <div tw="p-5 block mt-24">
           <Logo />
         </div> */}
-        <div className='container ' tw="text-center mt-10">
-          <h4 className='subtitle'>The Wedding of</h4>
-          <h2 className='title'>Firda</h2>
-          <h2 className='title'>&</h2>
-          <h2 className='title'>Ardyan</h2>
+        <div className='container ' tw="text-center mt-96">
+          <p className='subtitle'>Tasyakuran Khitanan</p>
+          <p className='title'>HILMI AS-SYAUQI</p>
+          <p className='subtitle'>Senin, 25 Juli 2022</p>
 
         </div>
-        <div tw="w-full sm:w-3/5 ">
+        {/* <div tw="w-full sm:w-3/5 ">
           <LazyImageNonStyle
             src={couple2}
           />
-          {/* <img src={couple1} /> */}
         </div>
 
         <div tw="w-20 h-20 absolute ml-40 top-32">
@@ -146,14 +148,15 @@ const App = () => {
             src={Butterfly}
             style={{ height: '100%', width: '100%' }}
           ></Player>
-        </div>
+        </div> */}
 
       </div>
 
-      <div tw="py-24 bg-white relative">
+      <div tw="py-24 bg-blues-100 relative min-h-screen">
 
-        <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
-        <div className="container" tw="mx-auto items-center pb-12 px-4 sm:px-0">
+        <div className="container" tw="mx-auto items-center pb-12 px-20  sm:px-0">
+        <div tw="absolute top-1 -right-11 w-32 h-32 bg-contain bg-no-repeat transform bg-lampu z-20" />
+        <div className='mirror' tw="absolute top-1 -left-10 w-32 h-32 bg-contain bg-no-repeat  rotate-0  bg-lampu z-20" />
           <div tw='px-8'>
 
             {/* <img src={bismillah} /> */}
@@ -164,34 +167,50 @@ const App = () => {
 
 
 
-          <p className='title-identity' tw="text-center text-base mt-8">
+          <p className='title-identity' tw="text-center text-white mt-8 text-lg">
             Assalamu'alaikum Warahmatullahi Wabarakatuh.
             <br />
-            Dengan memohon rahmat dan ridha Allah swt,
             <br />
-            kami bermaksud mengundang Bapak/Ibu/Saudara/Saudari pada acara pernikahan kami
+            Dengan memohon rahmat dan ridho Allah SWT,
+            Kami mengundang Bapak/Ibu Saudara/i untuk 
+            menghadiri acara Tasyakuran Walimatul Khitan
+            Putra Kami:
           </p>
 
           <div className='container' tw="mt-8 text-center">
             <div tw='grid justify-items-center'>
-              <img src={roundedFirda} width="50%" alt="" />
+              <img src={ppImie} width="50%" alt="" />
               <br />
-              <span className='brideFront font-rouge-script color-primary' tw='mt-2 text-4xl '>
-                Firda Meilani Fauziah
+              <span className=' title' tw='mt-2 text-2xl '>
+              HILMI AS-SYAUQI
               </span>
             </div>
-            <div className="explainbride color-primary">Putri dari<br />Bpk. Moch. Irfan  &amp; Ibu Ida Herawati</div>
-            <br />
-            <div className="explainbride color-primary ">dan</div>
-            <br />
-            <div tw='grid justify-items-center'><img src={roundedArdy} width="50%" alt="" />
-              <br />
-              <span className='brideFront font-rouge-script color-primary' tw='mt-2 text-4xl'>
-                Ardyan Hidayatul Falah
-              </span>
-            </div>
-            <div className="explainbride color-primary">Putra dari<br />Bpk. Sihabudin S.Pd &amp; Ibu Pupu Marpuah S.Pd</div>
+            <div className="explainbride" tw='text-white text-lg'>  Putra dari<br /> <span tw='font-bold'>Bpk. Dhani Nursetia</span> <br />  &amp; <span tw='font-bold'>Ibu Winda Iriantie Achmad</span> </div>
+          </div>
 
+        </div>
+      </div>
+      <div tw="py-24 bg-blues-200 relative min-h-screen">
+        <div className="container" tw="mx-auto items-center pb-12 px-20  sm:px-0">
+          <p tw="font-['Open_Sans']">Yang Insya Allah akan dilaksanakan pada:</p>
+          <h3>Khitanan</h3>
+          <p>Senin, 25 Juli 2022 <br /> 10.00 - 21.00 WIB</p>
+          <h3>Lokasi</h3>
+          <p>Jl. Asia Baru No. 1
+            RT 03 RW 04
+            Kel. Duri Kepa,
+            Kec. Kebon Jeruk,
+            Jakarta Barat
+          </p>
+          <div tw="flex mb-4 items-center justify-center">
+            <div tw="py-4">
+              <Link
+                isPrimary={true}
+                href="https://goo.gl/maps/keZpJcXCbszN7PQbA"
+              >
+                Lihat Map
+              </Link>
+            </div>
           </div>
 
         </div>
@@ -200,7 +219,7 @@ const App = () => {
         <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
         <div tw="absolute -top-24 -right-11 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-20" />
         <div tw="absolute -top-6 -right-8 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-10" />
-        <div tw="absolute -top-24 right-1 w-24 h-24 bg-contain bg-no-repeat transform rotate-12  bg-daun2 z-0" />
+        <div tw="absolute -top-24 right-1 w-24 h-24 bg-contain bg-no-repeat transform rotate-12 scale-50 bg-daun2 z-0" />
 
         <div className="container" tw="mx-auto items-center pb-12 px-4 sm:px-0">
           <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12">

@@ -79,12 +79,11 @@ body {
 
 
 .title {
-  font-family: 'Rouge Script', sans-serif;
+  font-family: 'Inria serif';
   font-weight: 700;
-  transform: rotate(-2deg);
-  font-size: 6rem;
-  color: #b07c34;
-  height: 1em;
+  padding: 1rem;
+  color: #FFFFFF;
+  font-size: 2.5rem;
 }
 
 .explainbride {
@@ -93,12 +92,12 @@ body {
 }
 
 .subtitle {
-  padding: 35px;
-  padding-bottom: 0;
-  font-family: 'dosis';
-  font-weight: 700;
-  color: #63402f;
-  font-size: 1.5rem;
+  
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2rem;
+  color: #FFFFFF;
 }
 
 .title-identity {
@@ -180,4 +179,8 @@ body {
 
 .mxh-50 {
   max-height: 50rem;
+}
+
+.mirror {
+  transform: scaleX(-1);
 }

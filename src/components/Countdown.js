@@ -46,20 +46,20 @@ const Countdown = ()=> {
       {timerComponents.length ? (  
       <div id="clockdiv">
       <div>
-          <span class="days" id="day">{timerComponents[0] ? timerComponents[0] :"0"  }</span>
-          <div class="smalltext">Days</div>
+          <span className="days" id="day">{timerComponents[0] ? timerComponents[0] :"0"  }</span>
+          <div className="smalltext">Days</div>
       </div>
       <div>
-          <span class="hours" id="hour">{timerComponents[1]}</span>
-          <div class="smalltext">Hours</div>
+          <span className="hours" id="hour">{timerComponents[1]}</span>
+          <div className="smalltext">Hours</div>
       </div>
       <div>
-          <span class="minutes" id="minute">{timerComponents[2]}</span>
-          <div class="smalltext">Minutes</div>
+          <span className="minutes" id="minute">{timerComponents[2]}</span>
+          <div className="smalltext">Minutes</div>
       </div>
       <div>
-          <span class="seconds" id="second">{timerComponents[3]}</span>
-          <div class="smalltext">Seconds</div>
+          <span className="seconds" id="second">{timerComponents[3]}</span>
+          <div className="smalltext">Seconds</div>
       </div>
     </div>
     ) : <span>Time's up!</span>}

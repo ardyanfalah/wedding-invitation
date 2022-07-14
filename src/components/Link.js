@@ -9,7 +9,7 @@ const Link = styled.a(({ isPrimary, isSecondary, isSmall }) => [
   tw`hover:(scale-105)`,
 
   // Use props to conditionally style your components
-  isPrimary && tw`bg-gold-900 text-white`,
+  isPrimary && tw`bg-white text-blues-100`,
 
   // Combine regular css with tailwind classes within backticks
   isSecondary && tw`border-2 border-gold-900 text-gold-900`,

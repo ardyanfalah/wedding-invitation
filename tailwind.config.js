@@ -29,16 +29,22 @@ module.exports = {
         roundedFirda: "url('/images/rounded-firda.png')",
         squareArdy: "url('/images/squar-ardy.png')",
         squareFirda: "url('/images/square-firda.png')",
-
-
-
+        bgimie: "url('/images/bgImie.jpeg')",
+        ppImie: "url('/images/ppImie.jpegs')",
+        lampu:"url('/images/lampu.svg')",
+        masjid:"url('/images/masjid.svg')",
+        pohon:"url('/images/pohon.svg')"
       }),
       colors: {
         gold: {
           100: '#D6CFC1',
           900: '#AA7A32'
+        },
+        blues: {
+          100: '#009194',
+          200: '#00AEA3'
         }
-      }
+      },
     }
   },
   plugins: [require('@tailwindcss/custom-forms'),
