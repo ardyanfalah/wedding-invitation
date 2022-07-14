@@ -123,7 +123,7 @@ const App = () => {
 
       <div
         className="container"
-        tw="mx-auto flex flex-col justify-center items-center bg-bgimie bg-cover bg-center bg-no-repeat min-h-screen"
+        tw="mx-0 flex flex-col justify-center items-center bg-bgimie bg-cover bg-center bg-no-repeat min-h-screen min-w-full"
       >
         {/* <div tw="p-5 block mt-24">
           <Logo />
@@ -152,9 +152,9 @@ const App = () => {
 
       </div>
 
-      <div tw="py-24 bg-blues-100 relative min-h-screen">
+      <div tw="py-24 bg-blues-100 relative ">
 
-        <div className="container" tw="mx-auto items-center pb-12 px-20  sm:px-0">
+        <div className="container" tw="mx-auto items-center pb-6 px-20  sm:px-0">
         <div tw="absolute top-1 -right-11 w-32 h-32 bg-contain bg-no-repeat transform bg-lampu z-20" />
         <div className='mirror' tw="absolute top-1 -left-10 w-32 h-32 bg-contain bg-no-repeat  rotate-0  bg-lampu z-20" />
           <div tw='px-8'>
@@ -192,7 +192,7 @@ const App = () => {
       </div>
       <div tw="py-24 bg-blues-200 relative min-h-screen">
         <div className="container" tw="mx-auto items-center pb-12 px-20  sm:px-0">
-          <p tw="font-['Open_Sans']">Yang Insya Allah akan dilaksanakan pada:</p>
+          <p tw="">Yang Insya Allah akan dilaksanakan pada:</p>
           <h3>Khitanan</h3>
           <p>Senin, 25 Juli 2022 <br /> 10.00 - 21.00 WIB</p>
           <h3>Lokasi</h3>
