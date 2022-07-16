@@ -1,15 +1,28 @@
 import React from 'react'
 import tw from 'twin.macro'
 import Iframe from 'react-iframe'
-import { Countdown, Layout, Button, Link, LazyImage, LazyImageNonStyle, Logo } from '../components'
+import {
+  Countdown,
+  Layout,
+  Button,
+  Link,
+  LazyImage,
+  LazyImageNonStyle,
+  Logo
+} from '../components'
 import { Player } from '@lottiefiles/react-lottie-player'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarAlt, faClock, faHeart } from '@fortawesome/free-regular-svg-icons'
+import {
+  faCalendarAlt,
+  faClock,
+  faHeart,
+  faCopy
+} from '@fortawesome/free-regular-svg-icons'
 import { faMapMarker } from '@fortawesome/free-solid-svg-icons'
 import { createClient } from '@supabase/supabase-js'
 import { useForm } from 'react-hook-form'
 import toast, { Toaster } from 'react-hot-toast'
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from 'styled-components'
 
 import QRImage from '../images/qrbca.png'
 import couple2 from '../images/couple2.png'
@@ -29,8 +42,6 @@ import ppImie from '../images/ppImie.png'
 import Modal from '../components/Modal'
 import { photos } from '../components/photos'
 
-
-
 const supabase = createClient(
   process.env.GATSBY_SUPABASE_HOST,
   process.env.GATSBY_SUPABASE_KEY
@@ -43,34 +54,53 @@ const Global = createGlobalStyle`
     box-sizing: border-box;
     text-align: center;
   }
-`;
+`
 
 const Grid = styled.div`
   display: grid;
   padding: 16px;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0px;
-`;
+`
 
 const App = () => {
   const [showModal, setShowModal] = React.useState(false)
   const [showGiving, setShowGiving] = React.useState(false)
   const { register, errors, handleSubmit } = useForm()
   const [posts, setPosts] = React.useState([])
-  const [isPlaying, setIsPlaying] = React.useState(false);
+  const [isPlaying, setIsPlaying] = React.useState(false)
+
+  const textCopy = 'Salin Nomor Rekening'
+  const [copyButtonText, setCopyButtonText] = React.useState(textCopy)
+
+  const textCopy2 = 'Salin Nomor Rekening'
+  const [copyButtonText2, setCopyButtonText2] = React.useState(textCopy2)
 
   var audio = null
-  if (typeof Audio != "undefined") {
-    audio = new Audio("../images/song.mp3")
+  if (typeof Audio != 'undefined') {
+    audio = new Audio('../images/song.mp3')
   }
-  const audioRef = React.useRef(null);
+  const audioRef = React.useRef(null)
   const play = (audio) => {
-    !isPlaying ? audioRef.current.play() : audioRef.current.pause();
-    setIsPlaying(!isPlaying);
-  };
+    !isPlaying ? audioRef.current.play() : audioRef.current.pause()
+    setIsPlaying(!isPlaying)
+  }
 
   React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setCopyButtonText(textCopy)
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [copyButtonText])
 
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setCopyButtonText2(textCopy2)
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [copyButtonText2])
+
+  React.useEffect(() => {
     fetchPosts()
     const mySubscription = supabase
       .from('comment')
@@ -78,7 +108,6 @@ const App = () => {
       .subscribe()
     return () => supabase.removeSubscription(mySubscription)
   }, [])
-
 
   async function fetchPosts() {
     const { data } = await supabase
@@ -110,8 +139,18 @@ const App = () => {
       })
   }
 
+  const copyAccountNumber = (accNum) => {
+    navigator.clipboard.writeText(accNum)
+    setCopyButtonText('Rekening berhasil disalin')
+  }
+
+  const copyAccountNumber2 = (accNum) => {
+    navigator.clipboard.writeText(accNum)
+    setCopyButtonText2('Rekening berhasil disalin')
+  }
+
   const clear = () => {
-    document.getElementById("messageForm").reset();
+    document.getElementById('messageForm').reset()
   }
 
   return (
@@ -128,11 +167,10 @@ const App = () => {
         {/* <div tw="p-5 block mt-24">
           <Logo />
         </div> */}
-        <div className='container ' tw="text-center mt-96">
-          <p className='subtitle'>Tasyakuran Khitanan</p>
-          <p className='title'>HILMI AS-SYAUQI</p>
-          <p className='subtitle'>Senin, 25 Juli 2022</p>
-
+        <div className="container " tw="text-center mt-96">
+          <p className="subtitle">Tasyakuran Khitanan</p>
+          <p className="title">HILMI AS-SYAUQI</p>
+          <p className="subtitle">Senin, 25 Juli 2022</p>
         </div>
         {/* <div tw="w-full sm:w-3/5 ">
           <LazyImageNonStyle
@@ -149,77 +187,194 @@ const App = () => {
             style={{ height: '100%', width: '100%' }}
           ></Player>
         </div> */}
-
       </div>
 
       <div tw="py-24 bg-blues-100 relative ">
-
-        <div className="container" tw="mx-auto items-center pb-6 px-20  sm:px-0">
-        <div tw="absolute top-1 -right-11 w-32 h-32 bg-contain bg-no-repeat transform bg-lampu z-20" />
-        <div className='mirror' tw="absolute top-1 -left-10 w-32 h-32 bg-contain bg-no-repeat  rotate-0  bg-lampu z-20" />
-          <div tw='px-8'>
-
+        <div className="container" tw="mx-auto items-center pb-6 px-8  sm:px-0">
+          <div tw="absolute top-0 -right-20 w-32 h-32 bg-contain bg-no-repeat transform bg-lampu z-20" />
+          <div
+            className="mirror"
+            tw="absolute top-0 -left-20 w-32 h-32 bg-contain bg-no-repeat  rotate-0  bg-lampu z-20"
+          />
+          <div tw="px-8">
             {/* <img src={bismillah} /> */}
-            <LazyImageNonStyle
-              src={bismillah}
-            />
+            <LazyImageNonStyle src={bismillah} />
           </div>
 
-
-
-          <p className='title-identity' tw="text-center text-white mt-8 text-lg">
+          <p
+            className="title-identity"
+            tw="text-center text-white mt-8 text-lg"
+          >
             Assalamu'alaikum Warahmatullahi Wabarakatuh.
             <br />
             <br />
-            Dengan memohon rahmat dan ridho Allah SWT,
-            Kami mengundang Bapak/Ibu Saudara/i untuk 
-            menghadiri acara Tasyakuran Walimatul Khitan
-            Putra Kami:
+            Dengan memohon rahmat dan ridho Allah SWT, Kami mengundang Bapak/Ibu
+            Saudara/i untuk menghadiri acara Tasyakuran Walimatul Khitan Putra
+            Kami:
           </p>
 
-          <div className='container' tw="mt-8 text-center">
-            <div tw='grid justify-items-center'>
+          <div className="container" tw="mt-8 text-center">
+            <div tw="grid justify-items-center">
               <img src={ppImie} width="50%" alt="" />
               <br />
-              <span className=' title' tw='mt-2 text-2xl '>
-              HILMI AS-SYAUQI
+              <span className=" title" tw="mt-2 text-2xl ">
+                HILMI AS-SYAUQI
               </span>
             </div>
-            <div className="explainbride" tw='text-white text-lg'>  Putra dari<br /> <span tw='font-bold'>Bpk. Dhani Nursetia</span> <br />  &amp; <span tw='font-bold'>Ibu Winda Iriantie Achmad</span> </div>
+            <div className="explainbride" tw="text-white text-lg">
+              {' '}
+              Putra dari
+              <br /> <span tw="font-bold">Bpk. Dhani Nursetia</span> <br />{' '}
+              &amp; <span tw="font-bold">Ibu Winda Iriantie Achmad</span>{' '}
+            </div>
           </div>
+        </div>
 
+        <div tw=" absolute flex flex-nowrap z-20 h-10 bottom-3">
+          <div
+            className="mirror"
+            // tw="absolute -right-8 -bottom-14 w-28 h-28 bg-contain bg-no-repeat rotate-0   bg-masjid z-20"
+            tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
+          />
+          <div
+            // tw="absolute right-20 -bottom-14 w-28 h-28 bg-contain bg-no-repeat rotate-0   bg-masjid z-20"
+            tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
+          />
+
+          <div
+            className="mirror"
+            tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
+
+            // tw="absolute -bottom-14 left-20 w-28 h-28 bg-contain bg-no-repeat  rotate-0  bg-masjid z-20"
+          />
+          <div
+            tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
+
+            // tw="absolute -bottom-14 -left-8 w-28 h-28 bg-contain bg-no-repeat  rotate-0  bg-masjid z-20"
+          />
         </div>
       </div>
       <div tw="py-24 bg-blues-200 relative min-h-screen">
-        <div className="container" tw="mx-auto items-center pb-12 px-20  sm:px-0">
-          <p tw="">Yang Insya Allah akan dilaksanakan pada:</p>
-          <h3>Khitanan</h3>
-          <p>Senin, 25 Juli 2022 <br /> 10.00 - 21.00 WIB</p>
-          <h3>Lokasi</h3>
-          <p>Jl. Asia Baru No. 1
-            RT 03 RW 04
-            Kel. Duri Kepa,
-            Kec. Kebon Jeruk,
+        <div
+          className="container"
+          tw="mx-auto items-center pb-12 px-8  sm:px-0"
+        >
+          <p tw="text-white text-lg font-dosis">
+            Yang Insya Allah akan dilaksanakan pada:
+          </p>
+          <div tw="text-4xl sm:text-5xl font-brittany text-white text-center mb-12 mt-5">
+            Khitanan
+          </div>
+          <p tw="text-white text-lg font-dosis font-bold mb-12">
+            <FontAwesomeIcon icon={faCalendarAlt} tw="mr-2" /> Senin, 25 Juli
+            2022 <br /> <FontAwesomeIcon icon={faClock} tw="mr-2" /> 10.00 -
+            21.00 WIB
+          </p>
+          <div tw="text-4xl sm:text-5xl font-brittany text-white text-center mb-12 mt-5">
+            Lokasi
+          </div>
+          <p tw="text-white text-lg mb-10 font-bold font-dosis">
+            <FontAwesomeIcon icon={faMapMarker} tw="mr-2" />
+            Jl. Asia Baru No. 1 RT 03 RW 04 Kel. Duri Kepa, Kec. Kebon Jeruk,
             Jakarta Barat
           </p>
           <div tw="flex mb-4 items-center justify-center">
             <div tw="py-4">
               <Link
                 isPrimary={true}
-                href="https://goo.gl/maps/keZpJcXCbszN7PQbA"
+                href="https://goo.gl/maps/WsYpVC3oFimvwRmF6"
               >
                 Lihat Map
               </Link>
             </div>
           </div>
 
+          <div
+            className="mirror"
+            tw="absolute bottom-0 right-2 w-28 h-28 bg-contain bg-no-repeat rotate-0   bg-pohon z-20"
+          />
+
+          <div tw="absolute bottom-0 left-2 w-28 h-28 bg-contain bg-no-repeat  rotate-0  bg-pohon z-20" />
+        </div>
+      </div>
+
+      <div tw="py-24 bg-blues-300 ">
+        <div className="container" tw="mx-auto items-center pb-12 px-4 sm:px-0">
+          <div tw="text-4xl sm:text-5xl font-brittany text-green-100 text-center mb-12 mt-5">
+            Hadiah
+          </div>
+
+          <p tw="text-green-100 text-lg mb-10 font-bold font-dosis">
+            Bagi yang berkeinginan memberikan tanda kasih, kami juga menyediakan
+            nomor rekening di bawah ini.
+          </p>
+
+          <Button isSecondary={true} onClick={() => setShowGiving(!showGiving)}>
+            Amplop Digital
+          </Button>
+          {showGiving ? (
+            <>
+              <div
+                tw="mx-auto w-full p-4 leading-loose font-sans items-center justify-center text-center"
+                style={{ maxWidth: 640 }}
+              >
+                <div tw="text-green-100 font-dosis">Transfer via BCA </div>
+                <div tw="text-green-100 font-dosis text-2xl">1270155304</div>
+                <div tw="text-green-100 font-dosis mb-4 ">Dhani Nursetia</div>
+                <Button
+                  isPrimary={true}
+                  onClick={() => copyAccountNumber('1270155304')}
+                  isSmall={true}
+                >
+                  <FontAwesomeIcon icon={faCopy} tw="mr-1 " />
+                  {copyButtonText}
+                </Button>
+
+                <div tw="mt-6 text-green-100 font-dosis">
+                  Transfer via Mandiri
+                </div>
+                <div tw=" text-2xl text-green-100 font-dosis">
+                  1180010901089
+                </div>
+                <div tw=" mb-10 text-green-100 font-dosis">
+                  Winda Iriantie Achmad
+                </div>
+
+                <Button
+                  isPrimary={true}
+                  onClick={() => copyAccountNumber2('1180010901089')}
+                  isSmall={true}
+                >
+                  <FontAwesomeIcon icon={faCopy} tw="mr-1" />
+                  {copyButtonText2}
+                </Button>
+              </div>
+            </>
+          ) : null}
+        </div>
+      </div>
+      <div tw="py-24 justify-center items-center bg-bgimie2 bg-cover bg-center bg-no-repeat min-h-screen">
+        <div
+          className="container"
+          tw="mx-auto items-center pb-12 px-4 sm:px-0 "
+        >
+          <div
+            className="container"
+            tw="mx-auto items-center pb-12 px-4 sm:px-0"
+          >
+            <div tw="text-4xl sm:text-5xl font-brittany text-white text-center mb-12 mt-5">
+              Menuju Hari Bahagia
+            </div>
+            <div tw="mt-10">
+              <Countdown></Countdown>
+            </div>
+          </div>
         </div>
       </div>
       <div tw="py-24  relative">
-        <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
-        <div tw="absolute -top-24 -right-11 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-20" />
+        {/* <div tw="absolute -top-24 -right-11 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-20" />
         <div tw="absolute -top-6 -right-8 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-10" />
-        <div tw="absolute -top-24 right-1 w-24 h-24 bg-contain bg-no-repeat transform rotate-12 scale-50 bg-daun2 z-0" />
+        <div tw="absolute -top-24 right-1 w-24 h-24 bg-contain bg-no-repeat transform rotate-12 scale-50 bg-daun2 z-0" /> */}
 
         <div className="container" tw="mx-auto items-center pb-12 px-4 sm:px-0">
           <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12">
@@ -233,126 +388,175 @@ const App = () => {
               <h4>Test</h4>
             </div>
           </div> */}
-          <div className="cardevent" >
-            <div className="row" tw='flex flex-col'>
-              <div className="column" tw='mb-10'>
-                <div className="card card-schedule" tw='card'>
-                  <div className="containerijabwd" tw='ml-2'>
-
+          <div className="cardevent">
+            <div className="row" tw="flex flex-col">
+              <div className="column" tw="mb-10">
+                <div className="card card-schedule" tw="card">
+                  <div className="containerijabwd" tw="ml-2">
                     <table>
-                      <tbody><tr>
-                        <th tw='w-1/5'>  <img src={akad} width="100%" /></th>
-                        <th></th>
-                        <th tw='w-4/5'><p className='title-identity ' tw='text-xl text-left'><b>Akad Pernikahan</b></p></th>
-                      </tr>
-                        <tr className='title-identity' tw='text-left'>
+                      <tbody>
+                        <tr>
+                          <th tw="w-1/5">
+                            {' '}
+                            <img src={akad} width="100%" />
+                          </th>
+                          <th></th>
+                          <th tw="w-4/5">
+                            <p
+                              className="title-identity "
+                              tw="text-xl text-left"
+                            >
+                              <b>Akad Pernikahan</b>
+                            </p>
+                          </th>
+                        </tr>
+                        <tr className="title-identity" tw="text-left">
                           <td></td>
-                          <td><FontAwesomeIcon icon={faCalendarAlt} /></td>
-                          <td >Minggu, 19 Desember 2021</td>
+                          <td>
+                            <FontAwesomeIcon icon={faCalendarAlt} />
+                          </td>
+                          <td>Minggu, 19 Desember 2021</td>
                         </tr>
                         <tr>
                           <td></td>
-                          <td><br /></td>
-                          <td><br /></td>
+                          <td>
+                            <br />
+                          </td>
+                          <td>
+                            <br />
+                          </td>
                         </tr>
-                        <tr className='title-identity ' tw='text-left'>
+                        <tr className="title-identity " tw="text-left">
                           <td></td>
-                          <td><FontAwesomeIcon icon={faClock} /></td>
+                          <td>
+                            <FontAwesomeIcon icon={faClock} />
+                          </td>
                           <td>09.00 WIB</td>
                         </tr>
                         <tr>
                           <td></td>
-                          <td><br /></td>
-                          <td><br /></td>
+                          <td>
+                            <br />
+                          </td>
+                          <td>
+                            <br />
+                          </td>
                         </tr>
-                        <tr className='title-identity ' tw='text-left'>
+                        <tr className="title-identity " tw="text-left">
                           <td></td>
-                          <td><FontAwesomeIcon icon={faMapMarker} /></td>
+                          <td>
+                            <FontAwesomeIcon icon={faMapMarker} />
+                          </td>
                           <td>Rumah Makan Sarirasa Cijere</td>
                         </tr>
-                        <tr className='title-identity ' tw='text-left'>
+                        <tr className="title-identity " tw="text-left">
                           <td></td>
                           <td></td>
                           <td>Kp Cijere, RT.06/RW.03, Cintakarya,</td>
                         </tr>
-                        <tr className='title-identity ' tw='text-left'>
+                        <tr className="title-identity " tw="text-left">
                           <td></td>
                           <td></td>
                           <td>Sindangkerta</td>
                         </tr>
-                        <tr className='title-identity ' tw='text-left'>
+                        <tr className="title-identity " tw="text-left">
                           <td></td>
                           <td></td>
                           <td>Kabupaten Bandung Barat</td>
                         </tr>
                         <tr>
                           <td></td>
-                          <td><br /></td>
-                          <td><br /></td>
+                          <td>
+                            <br />
+                          </td>
+                          <td>
+                            <br />
+                          </td>
                         </tr>
-
-                      </tbody></table>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-
               </div>
 
               <div className="column">
-                <div className="card card-schedule" tw='card'>
-                  <div className="containerweddingwd" tw='mr-2'>
-
-                    <table tw='text-right'>
-                      <tbody><tr className='title-identity '>
-                        <th tw='text-right w-4/5'><p tw='text-lg'><b>Resepsi Pernikahan</b></p></th>
-                        <th></th>
-                        <th tw='w-1/5'><img src={resepsi} width="100%" /></th>
-                      </tr>
-                        <tr className='title-identity ' tw='text-right '>
+                <div className="card card-schedule" tw="card">
+                  <div className="containerweddingwd" tw="mr-2">
+                    <table tw="text-right">
+                      <tbody>
+                        <tr className="title-identity ">
+                          <th tw="text-right w-4/5">
+                            <p tw="text-lg">
+                              <b>Resepsi Pernikahan</b>
+                            </p>
+                          </th>
+                          <th></th>
+                          <th tw="w-1/5">
+                            <img src={resepsi} width="100%" />
+                          </th>
+                        </tr>
+                        <tr className="title-identity " tw="text-right ">
                           <td>Minggu, 19 Desember 2021</td>
-                          <td><FontAwesomeIcon icon={faCalendarAlt} /></td>
+                          <td>
+                            <FontAwesomeIcon icon={faCalendarAlt} />
+                          </td>
                           <td></td>
                         </tr>
                         <tr>
-                          <td><br /></td>
-                          <td><br /></td>
+                          <td>
+                            <br />
+                          </td>
+                          <td>
+                            <br />
+                          </td>
                           <td></td>
                         </tr>
-                        <tr className='title-identity ' tw='text-right'>
+                        <tr className="title-identity " tw="text-right">
                           <td>11.00 - Selesai</td>
-                          <td><FontAwesomeIcon icon={faClock} /></td>
+                          <td>
+                            <FontAwesomeIcon icon={faClock} />
+                          </td>
                           <td></td>
                         </tr>
                         <tr>
-                          <td><br /></td>
-                          <td><br /></td>
+                          <td>
+                            <br />
+                          </td>
+                          <td>
+                            <br />
+                          </td>
                           <td></td>
                         </tr>
-                        <tr className='title-identity ' tw='text-right'>
+                        <tr className="title-identity " tw="text-right">
                           <td>Rumah Makan Sarirasa Cijere</td>
-                          <td><FontAwesomeIcon icon={faMapMarker} /></td>
+                          <td>
+                            <FontAwesomeIcon icon={faMapMarker} />
+                          </td>
                           <td></td>
                         </tr>
-                        <tr className='title-identity ' tw='text-right'>
+                        <tr className="title-identity " tw="text-right">
                           <td>Kp Cijere, RT.06/RW.03, Cintakarya,</td>
                           <td></td>
                           <td></td>
                         </tr>
-                        <tr className='title-identity ' tw='text-right'>
+                        <tr className="title-identity " tw="text-right">
                           <td>Sindangkerta,</td>
                           <td></td>
                           <td></td>
                         </tr>
-                        <tr className='title-identity ' tw='text-right'>
+                        <tr className="title-identity " tw="text-right">
                           <td>Kabupaten Bandung Barat</td>
                           <td></td>
                           <td></td>
                         </tr>
-                        <tr tw='text-right'>
-                          <td><br /></td>
+                        <tr tw="text-right">
+                          <td>
+                            <br />
+                          </td>
                           <td></td>
                           <td></td>
                         </tr>
-                        <tr tw='text-right w-1/5'>
+                        <tr tw="text-right w-1/5">
                           <td>
                             <Link
                               isPrimary={true}
@@ -360,43 +564,46 @@ const App = () => {
                               href="https://www.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Firda+%26+Ardyan&location=https%3A%2F%2Fgoo.gl%2Fmaps%2FzfU5YT6uRSWKd1G68&dates=20211219T040000Z%2F20211219T080000Z"
                             >
                               Add to Calendar
-                            </Link></td>
+                            </Link>
+                          </td>
                           <td></td>
                           <td></td>
                         </tr>
-                      </tbody></table>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div tw='mt-10'>
-            <div className="explainbride health-advice" >
-              <p><FontAwesomeIcon icon={faHeart} /><br />
-                Guna mencegah penularan covid-19 kami harapkan kedatangan para tamu undangan tetap menerapkan protokol yang berlaku :
+          <div tw="mt-10">
+            <div className="explainbride health-advice">
+              <p>
+                <FontAwesomeIcon icon={faHeart} />
+                <br />
+                Guna mencegah penularan covid-19 kami harapkan kedatangan para
+                tamu undangan tetap menerapkan protokol yang berlaku :
               </p>
-              <div className='advices'>
-                Wajib menggunakan masker
-              </div>
-              <div className='advices'>
+              <div className="advices">Wajib menggunakan masker</div>
+              <div className="advices">
                 Menggunakan salam namaste / salam hangat tanpa bersentuhan
               </div>
-              <div className='advices'>
-                Saling menjaga jarak di dalam acara
-              </div>
-              <div className='advices'>
+              <div className="advices">Saling menjaga jarak di dalam acara</div>
+              <div className="advices">
                 Menjaga kebersihan dengan menggunakan handsanitizer
               </div>
             </div>
-            <p className="explainbride" tw='mt-10'>
+            <p className="explainbride" tw="mt-10">
               Merupakan suatu kehormatan dan kebahagiaan
-              <br />bagi kami apabila Bapak/Ibu/Saudara(i)
-              <br />berkenan untuk hadir dan memberikan do'a restu
               <br />
-              kepada kami.</p>
+              bagi kami apabila Bapak/Ibu/Saudara(i)
+              <br />
+              berkenan untuk hadir dan memberikan do'a restu
+              <br />
+              kepada kami.
+            </p>
           </div>
-          <div tw='mt-10'>
-
+          <div tw="mt-10">
             <Countdown></Countdown>
           </div>
         </div>
@@ -427,7 +634,6 @@ const App = () => {
                 <div tw="">Transfer via Mandiri</div>
                 <div tw="font-bold text-2xl">1300017806913</div>
                 <div tw="font-bold mb-16">Ardyan Hidayatul Falah</div>
-
               </div>
             </>
           ) : null}
@@ -445,8 +651,10 @@ const App = () => {
           <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12 mt-12">
             Location
           </div>
-          <div className='title-identity ' tw="text-xl font-semibold mb-2">Sarirasa Ayam Kampung Cijere</div>
-          <div className='title-identity ' tw="text-xl mb-4 ">
+          <div className="title-identity " tw="text-xl font-semibold mb-2">
+            Sarirasa Ayam Kampung Cijere
+          </div>
+          <div className="title-identity " tw="text-xl mb-4 ">
             Kp Cijere, Desa, RT.06/RW.03, Cintakarya, Sindangkerta
             <br />
             Kabupaten Bandung Barat, Jawa Barat 40563
@@ -462,12 +670,12 @@ const App = () => {
             </div>
           </div>
           <div tw="">
-
             <div className="google-map">
               {/* <iframe frameborder="0"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJZVrx5DQo1i0R6sjtcxJobd4" allowfullscreen=""></iframe> */}
-              <Iframe url="https://maps.google.com/maps?q=Sarirasa%20Ayam%20Kampung%20Cijere&t=&z=15&ie=UTF8&iwloc=&output=embed"
-
-                className="map" />
+              <Iframe
+                url="https://maps.google.com/maps?q=Sarirasa%20Ayam%20Kampung%20Cijere&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="map"
+              />
             </div>
           </div>
         </div>
@@ -482,13 +690,8 @@ const App = () => {
           Gallery
         </div>
         <Grid>
-          {photos.map(i => (
-            <LazyImage
-              key={i}
-              src={i.src}
-
-              alt={`Moment Image `}
-            />
+          {photos.map((i) => (
+            <LazyImage key={i} src={i.src} alt={`Moment Image `} />
           ))}
         </Grid>
       </div>
@@ -498,15 +701,17 @@ const App = () => {
             Message
           </div>
           <div tw="rounded-b-lg  mx-4 mt-4 ">
-
             <div tw="absolute -top-20 -right-12 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-20" />
             <div tw="absolute -top-2 -right-9 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-10" />
             <div tw="absolute -top-20 -right-1 w-24 h-24 bg-contain bg-no-repeat transform rotate-12  bg-daun2 z-0" />
 
-            <form id='messageForm' onSubmit={handleSubmit(onSubmit)}><input type="hidden" />
+            <form id="messageForm" onSubmit={handleSubmit(onSubmit)}>
+              <input type="hidden" />
               <div tw="font-semibold font-poppin text-sm">
                 <div tw="mb-5 text-left">
-                  <label className='title-identity' tw='font-semibold text-xl'>Nama</label>
+                  <label className="title-identity" tw="font-semibold text-xl">
+                    Nama
+                  </label>
                   <input
                     name="name"
                     ref={register({ required: true })}
@@ -520,7 +725,9 @@ const App = () => {
                   </div>
                 </div>
                 <div tw="mb-5 text-left">
-                  <label className='title-identity' tw='font-semibold text-xl'>Ucapan</label>
+                  <label className="title-identity" tw="font-semibold text-xl">
+                    Ucapan
+                  </label>
                   <textarea
                     name="desc"
                     ref={register({ required: true })}
@@ -530,7 +737,8 @@ const App = () => {
                     rows={5}
                     cols={5}
                     id="comment_content"
-                    spellCheck="false"></textarea>
+                    spellCheck="false"
+                  ></textarea>
 
                   <div tw="text-xs text-gold-900">
                     {errors.name && 'Your Name is required'}
@@ -542,44 +750,32 @@ const App = () => {
               {/* <button tw="font-bold py-2 px-4 w-full bg-purple-400 text-lg text-white shadow-md rounded-lg ">Comment </button> */}
             </form>
 
-            <div className='mxh-50' tw='mt-10  overflow-auto'>
-              <table tw=''>
+            <div className="mxh-50" tw="mt-10  overflow-auto">
+              <table tw="">
                 <tbody>
-                  {posts.map(post => (
+                  {posts.map((post) => (
                     <>
-                      <tr className="spacer" tw='h-4'></tr>
-                      <tr tw='mt-10'>
+                      <tr className="spacer" tw="h-4"></tr>
+                      <tr tw="mt-10">
                         <td valign="top">
-                          <div tw='w-8'>
-
+                          <div tw="w-8">
                             {/* <img src={Logo} tw='w-8' width="25px" /> */}
                             <Logo />
-
                           </div>
                         </td>
-                        <td className='message' tw='text-left'>
-                          <div className="wishdisplayname" tw='font-bold'>
+                        <td className="message" tw="text-left">
+                          <div className="wishdisplayname" tw="font-bold">
                             {post.name}
                           </div>
-                          <div tw='pb-4'>
-                            {post.desc}
-                          </div>
+                          <div tw="pb-4">{post.desc}</div>
                         </td>
                       </tr>
                     </>
-
-                  )
-                  )
-                  }
-
+                  ))}
                 </tbody>
               </table>
             </div>
-
-
-
           </div>
-
         </div>
       </div>
       <div tw="py-24 bg-gold-100 relative text-center font-sans">
@@ -588,7 +784,7 @@ const App = () => {
           sonnylab,
         </a>
         <br />
-        Remake by <span tw='font-semibold'>Ardyan</span>
+        Remake by <span tw="font-semibold">Ardyan</span>
         <div tw="absolute -bottom-6 -right-7 w-28 h-28 bg-cover bg-no-repeat transform -rotate-90  bg-kmbg3 z-10" />
         <div tw="absolute -bottom-8 -left-4 w-28 h-28 bg-cover bg-no-repeat transform  bg-kmbg3 z-10" />
       </div>
@@ -597,23 +793,34 @@ const App = () => {
 
       <div className="music-box">
         <audio
-          src={"../images/song.mp3"}
+          src={'../images/song.mp3'}
           ref={audioRef}
           loop={true}
           autoPlay={true}
         ></audio>
         {isPlaying ? (
-          <button type="button" className="music" id="unmute2-sound" >
-            <img alt="" onClick={() => play(audio)} src={unmute} width="30" height="30" />
+          <button type="button" className="music" id="unmute2-sound">
+            <img
+              alt=""
+              onClick={() => play(audio)}
+              src={unmute}
+              width="30"
+              height="30"
+            />
           </button>
         ) : (
-          <button type="button" className="music" id="mute-sound" >
-            <img alt="" onClick={() => play(audio)} src={mute} width="30" height="30" />
+          <button type="button" className="music" id="mute-sound">
+            <img
+              alt=""
+              onClick={() => play(audio)}
+              src={mute}
+              width="30"
+              height="30"
+            />
           </button>
         )}
       </div>
-
-    </Layout >
+    </Layout>
   )
 }
 

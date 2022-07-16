@@ -9,7 +9,8 @@ module.exports = {
         brittany: ['Brittany Signature'],
         serif: ['Poppins'],
         mono: ['SFMono-Regular', 'Menlo'],
-        poppin: ['Poppins']
+        poppin: ['Poppins'],
+        dosis: ['dosis']
       },
       backgroundImage: () => ({
         gingko: "url('/images/gingko.png')",
@@ -30,10 +31,12 @@ module.exports = {
         squareArdy: "url('/images/squar-ardy.png')",
         squareFirda: "url('/images/square-firda.png')",
         bgimie: "url('/images/bgImie.jpeg')",
-        ppImie: "url('/images/ppImie.jpegs')",
-        lampu:"url('/images/lampu.svg')",
-        masjid:"url('/images/masjid.svg')",
-        pohon:"url('/images/pohon.svg')"
+        bgimie2:
+          "linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgb(0, 0, 0)), url('/images/bgImie2.jpg')",
+        ppImie: "url('/images/ppImie.jpeg')",
+        lampu: "url('/images/lampu.svg')",
+        masjid: "url('/images/masjid.svg')",
+        pohon: "url('/images/pohon.svg')"
       }),
       colors: {
         gold: {
@@ -42,27 +45,32 @@ module.exports = {
         },
         blues: {
           100: '#009194',
-          200: '#00AEA3'
+          200: '#00AEA3',
+          300: '#F5FFFE'
+        },
+        green: {
+          100: '#038689'
         }
-      },
+      }
     }
   },
-  plugins: [require('@tailwindcss/custom-forms'),
-  plugin(function ({ addComponents, addUtilities, theme }) {
-   
-    addComponents({
-      '.card': {
-        // backgroundColor: theme('colors.white'),
-        borderRadius: theme('borderRadius.lg'),
-        padding: theme('spacing.6'),
-        // boxShadow: theme('boxShadow.xl'),
-      }
-    })
+  plugins: [
+    require('@tailwindcss/custom-forms'),
+    plugin(function ({ addComponents, addUtilities, theme }) {
+      addComponents({
+        '.card': {
+          // backgroundColor: theme('colors.white'),
+          borderRadius: theme('borderRadius.lg'),
+          padding: theme('spacing.6')
+          // boxShadow: theme('boxShadow.xl'),
+        }
+      })
 
-    addUtilities({
-      '.content-auto': {
-        contentVisibility: 'auto',
-      }
+      addUtilities({
+        '.content-auto': {
+          contentVisibility: 'auto'
+        }
+      })
     })
-  })]
+  ]
 }

@@ -22,16 +22,16 @@ body {
 }
 
 body {
-  background-color: #D6CFC1;
+  background-color: #d6cfc1;
 }
 
 .container {
-  width: 100%
+  width: 100%;
 }
 
 @media (min-width: 640px) {
   .container {
-    max-width: 640px
+    max-width: 640px;
   }
 
   .cardevent {
@@ -42,25 +42,25 @@ body {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 768px
+    max-width: 768px;
   }
 }
 
 @media (min-width: 1024px) {
   .container {
-    max-width: 768px
+    max-width: 768px;
   }
 }
 
 @media (min-width: 1280px) {
   .container {
-    max-width: 768px
+    max-width: 768px;
   }
 }
 
 .card-schedule {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: #D6CFC1;
+  background-color: #d6cfc1;
 }
 
 .map {
@@ -77,27 +77,23 @@ body {
   width: 100%;
 }
 
-
 .title {
   font-family: 'Inria serif';
   font-weight: 700;
   padding: 1rem;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 2.5rem;
 }
 
 .explainbride {
   font-family: 'dosis';
-
 }
 
 .subtitle {
-  
-
   font-style: normal;
   font-weight: 500;
   font-size: 2rem;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .title-identity {
@@ -131,13 +127,13 @@ body {
   font-size: 30px;
 }
 
-#clockdiv>div {
+#clockdiv > div {
   padding: 8px;
   border-radius: 3px;
   display: inline-block;
 }
 
-#clockdiv div>span {
+#clockdiv div > span {
   padding: 10px;
   border-radius: 3px;
   display: inline-block;
@@ -148,8 +144,8 @@ body {
 #minute,
 #second {
   font-size: 2rem;
-  color: #AA7A32;
-  border-bottom: solid 3px #AA7A32;
+  color: white;
+  border-bottom: solid 3px white;
 }
 
 .smalltext {
@@ -159,7 +155,7 @@ body {
 }
 
 .health-advice {
-  background-color: #AA7A32;
+  background-color: #aa7a32;
   width: 100%;
   margin: auto;
   box-shadow: 1px 1px 5px #888888;
