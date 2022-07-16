@@ -82,10 +82,7 @@ const Layout = ({ children, ...rest }) => {
           content="Official Wedding Website Firda Meilani Fauziah with Ardyan Hidayatul Falah"
         />
         <meta property="og:title" content="Khitanan Imie - Undangan Digital" />
-        <meta
-          property="og:url"
-          content="https://weddinginvitationmain.gatsbyjs.io/"
-        />
+        <meta property="og:url" content="https://undangankhitan.gatsbyjs.io/" />
         <meta property="og:description" content="25 Juli 2022" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Undangan Digital"></meta>
