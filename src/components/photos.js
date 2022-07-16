@@ -1,124 +1,60 @@
 export const photos = [
-
   {
-    src: "https://i.ibb.co/Dfgs3Sk/DSCF5642.jpg",
+    src:
+      'https://i.ibb.co/25NTVjq/Whats-App-Image-2022-07-10-at-10-16-07-PM.jpg',
     width: 4,
     height: 3
   },
   {
-    src: "https://i.ibb.co/F41fkqq/SCRT0292.jpg",
+    src:
+      'https://i.ibb.co/B3LT5cG/Whats-App-Image-2022-07-10-at-10-16-07-PM-2.jpg',
     width: 1,
     height: 1
   },
   {
-    src: "https://i.ibb.co/hmG2vrh/DSCF5696.jpg",
+    src: 'https://i.ibb.co/10hHxK2/20220703-204748.jpg',
     width: 3,
     height: 4
   },
   {
-    src: "https://i.ibb.co/bjtTSXj/SCRT0436.jpg",
+    src:
+      'https://i.ibb.co/hVVft7b/Whats-App-Image-2022-07-10-at-10-16-07-PM-1.jpg',
     width: 3,
     height: 4
   },
   {
-    src: "https://i.ibb.co/98Qc5L6/SCRT0537.jpg",
+    src:
+      'https://i.ibb.co/z8XbD6M/Whats-App-Image-2022-07-10-at-10-16-06-PM.jpg',
     width: 3,
     height: 4
   },
   {
-    src: "https://i.ibb.co/YBvYXGR/SCRT0242.jpg",
+    src:
+      'https://i.ibb.co/TM1sFZr/Whats-App-Image-2022-07-10-at-10-16-06-PM-3.jpg',
     width: 4,
     height: 3
   },
   {
-    src: "https://i.ibb.co/sjT9p1g/SCRT0405.jpg",
+    src:
+      'https://i.ibb.co/dPSHM3Y/Whats-App-Image-2022-07-10-at-10-16-06-PM-2.jpg',
     width: 3,
     height: 4
   },
   {
-    src: "https://i.ibb.co/YWPSCyS/SCRT0679.jpg",
+    src:
+      'https://i.ibb.co/kybsGhd/Whats-App-Image-2022-07-10-at-10-16-08-PM.jpg',
     width: 4,
     height: 3
   },
   {
-    src: "https://i.ibb.co/tJPJ43b/SCRT0662.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/QpCdtm1/SCRT0284.jpg",
+    src: 'https://i.ibb.co/r4H5mwr/20220703-204310.jpg',
     width: 3,
     height: 4
   },
   {
-    src: "https://i.ibb.co/Vt7W5Lb/DSCF5425.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/f4MSJcn/SCRT0055.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/pLwMFsx/DSCF5457.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/717DJgC/DSCF5465.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/ZXgCZWS/SCRT0066.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/1s9cytQ/DSCF5487.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/5YKCKQJ/DSCF5491.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/yWtH90B/SCRT0134.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/L0XMfb1/DSCF5494.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/wd2vD5W/DSCF5500.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/S0dFv4V/DSCF5512.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/FbmRVmQ/SCRT0142.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/M6sqB0z/SCRT0221.jpg",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://i.ibb.co/CHw8NMS/SCRT0197.jpg",
+    src:
+      'https://i.ibb.co/DRt8yrM/Whats-App-Image-2022-07-10-at-10-16-08-PM-1.jpg',
     width: 4,
     height: 3
   }
-  
-];
+]

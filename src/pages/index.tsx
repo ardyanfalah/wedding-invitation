@@ -16,7 +16,8 @@ import {
   faCalendarAlt,
   faClock,
   faHeart,
-  faCopy
+  faCopy,
+  faComment
 } from '@fortawesome/free-regular-svg-icons'
 import { faMapMarker } from '@fortawesome/free-solid-svg-icons'
 import { createClient } from '@supabase/supabase-js'
@@ -353,14 +354,14 @@ const App = () => {
           ) : null}
         </div>
       </div>
-      <div tw="py-24 justify-center items-center bg-bgimie2 bg-cover bg-center bg-no-repeat min-h-screen">
+      <div tw="py-24 justify-center relative bg-bgimie2 bg-cover bg-center bg-no-repeat  h-4/5">
         <div
           className="container"
-          tw="mx-auto items-center pb-12 px-4 sm:px-0 "
+          tw=" pb-12 px-4 sm:px-0 place-items-center flex h-96"
         >
           <div
             className="container"
-            tw="mx-auto items-center pb-12 px-4 sm:px-0"
+            tw="mx-auto items-center pb-12 px-4 sm:px-0 absolute -bottom-2 "
           >
             <div tw="text-4xl sm:text-5xl font-brittany text-white text-center mb-12 mt-5">
               Menuju Hari Bahagia
@@ -371,340 +372,49 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div tw="py-24  relative">
-        {/* <div tw="absolute -top-24 -right-11 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-20" />
-        <div tw="absolute -top-6 -right-8 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-10" />
-        <div tw="absolute -top-24 right-1 w-24 h-24 bg-contain bg-no-repeat transform rotate-12 scale-50 bg-daun2 z-0" /> */}
 
+      <div tw="pt-8 bg-blues-100 ">
         <div className="container" tw="mx-auto items-center pb-12 px-4 sm:px-0">
-          <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12">
-            Wedding Schedule
+          <div tw="text-4xl sm:text-5xl font-brittany text-white text-center mb-12 mt-5">
+            Protokol Kesehatan
           </div>
-          {/* <div>
-            <div className='card card-schedule' tw='card'>
-              <h4>Test <FontAwesomeIcon icon={faCalendarAlt} /></h4>
-            </div>
-            <div className='card card-schedule' tw='card'>
-              <h4>Test</h4>
-            </div>
-          </div> */}
-          <div className="cardevent">
-            <div className="row" tw="flex flex-col">
-              <div className="column" tw="mb-10">
-                <div className="card card-schedule" tw="card">
-                  <div className="containerijabwd" tw="ml-2">
-                    <table>
-                      <tbody>
-                        <tr>
-                          <th tw="w-1/5">
-                            {' '}
-                            <img src={akad} width="100%" />
-                          </th>
-                          <th></th>
-                          <th tw="w-4/5">
-                            <p
-                              className="title-identity "
-                              tw="text-xl text-left"
-                            >
-                              <b>Akad Pernikahan</b>
-                            </p>
-                          </th>
-                        </tr>
-                        <tr className="title-identity" tw="text-left">
-                          <td></td>
-                          <td>
-                            <FontAwesomeIcon icon={faCalendarAlt} />
-                          </td>
-                          <td>Minggu, 19 Desember 2021</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>
-                            <br />
-                          </td>
-                          <td>
-                            <br />
-                          </td>
-                        </tr>
-                        <tr className="title-identity " tw="text-left">
-                          <td></td>
-                          <td>
-                            <FontAwesomeIcon icon={faClock} />
-                          </td>
-                          <td>09.00 WIB</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>
-                            <br />
-                          </td>
-                          <td>
-                            <br />
-                          </td>
-                        </tr>
-                        <tr className="title-identity " tw="text-left">
-                          <td></td>
-                          <td>
-                            <FontAwesomeIcon icon={faMapMarker} />
-                          </td>
-                          <td>Rumah Makan Sarirasa Cijere</td>
-                        </tr>
-                        <tr className="title-identity " tw="text-left">
-                          <td></td>
-                          <td></td>
-                          <td>Kp Cijere, RT.06/RW.03, Cintakarya,</td>
-                        </tr>
-                        <tr className="title-identity " tw="text-left">
-                          <td></td>
-                          <td></td>
-                          <td>Sindangkerta</td>
-                        </tr>
-                        <tr className="title-identity " tw="text-left">
-                          <td></td>
-                          <td></td>
-                          <td>Kabupaten Bandung Barat</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>
-                            <br />
-                          </td>
-                          <td>
-                            <br />
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
 
-              <div className="column">
-                <div className="card card-schedule" tw="card">
-                  <div className="containerweddingwd" tw="mr-2">
-                    <table tw="text-right">
-                      <tbody>
-                        <tr className="title-identity ">
-                          <th tw="text-right w-4/5">
-                            <p tw="text-lg">
-                              <b>Resepsi Pernikahan</b>
-                            </p>
-                          </th>
-                          <th></th>
-                          <th tw="w-1/5">
-                            <img src={resepsi} width="100%" />
-                          </th>
-                        </tr>
-                        <tr className="title-identity " tw="text-right ">
-                          <td>Minggu, 19 Desember 2021</td>
-                          <td>
-                            <FontAwesomeIcon icon={faCalendarAlt} />
-                          </td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <br />
-                          </td>
-                          <td>
-                            <br />
-                          </td>
-                          <td></td>
-                        </tr>
-                        <tr className="title-identity " tw="text-right">
-                          <td>11.00 - Selesai</td>
-                          <td>
-                            <FontAwesomeIcon icon={faClock} />
-                          </td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <br />
-                          </td>
-                          <td>
-                            <br />
-                          </td>
-                          <td></td>
-                        </tr>
-                        <tr className="title-identity " tw="text-right">
-                          <td>Rumah Makan Sarirasa Cijere</td>
-                          <td>
-                            <FontAwesomeIcon icon={faMapMarker} />
-                          </td>
-                          <td></td>
-                        </tr>
-                        <tr className="title-identity " tw="text-right">
-                          <td>Kp Cijere, RT.06/RW.03, Cintakarya,</td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                        <tr className="title-identity " tw="text-right">
-                          <td>Sindangkerta,</td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                        <tr className="title-identity " tw="text-right">
-                          <td>Kabupaten Bandung Barat</td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                        <tr tw="text-right">
-                          <td>
-                            <br />
-                          </td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                        <tr tw="text-right w-1/5">
-                          <td>
-                            <Link
-                              isPrimary={true}
-                              isSmall={true}
-                              href="https://www.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Firda+%26+Ardyan&location=https%3A%2F%2Fgoo.gl%2Fmaps%2FzfU5YT6uRSWKd1G68&dates=20211219T040000Z%2F20211219T080000Z"
-                            >
-                              Add to Calendar
-                            </Link>
-                          </td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div tw="mt-10">
-            <div className="explainbride health-advice">
-              <p>
-                <FontAwesomeIcon icon={faHeart} />
-                <br />
-                Guna mencegah penularan covid-19 kami harapkan kedatangan para
-                tamu undangan tetap menerapkan protokol yang berlaku :
-              </p>
-              <div className="advices">Wajib menggunakan masker</div>
-              <div className="advices">
-                Menggunakan salam namaste / salam hangat tanpa bersentuhan
-              </div>
-              <div className="advices">Saling menjaga jarak di dalam acara</div>
-              <div className="advices">
-                Menjaga kebersihan dengan menggunakan handsanitizer
-              </div>
-            </div>
-            <p className="explainbride" tw="mt-10">
-              Merupakan suatu kehormatan dan kebahagiaan
+          <div className="explainbride health-advice" tw="pb-8">
+            <p>
+              <FontAwesomeIcon icon={faHeart} />
               <br />
-              bagi kami apabila Bapak/Ibu/Saudara(i)
-              <br />
-              berkenan untuk hadir dan memberikan do'a restu
-              <br />
-              kepada kami.
+              Guna mencegah penularan covid-19 kami harapkan kedatangan para
+              tamu undangan tetap menerapkan protokol yang berlaku :
             </p>
-          </div>
-          <div tw="mt-10">
-            <Countdown></Countdown>
-          </div>
-        </div>
-      </div>
-      <div tw="py-24 bg-white relative">
-        <div tw="absolute -top-24 -left-8 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-20" />
-        <div tw="absolute -top-6 -left-11 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-10" />
-        <div tw="absolute -top-24 -left-6 w-24 h-24 bg-contain bg-no-repeat transform rotate-90  bg-daun2 z-0" />
-
-        <div
-          className="container"
-          tw="mx-auto items-center pb-12 px-4 sm:px-0 relative"
-        >
-          <Button isSecondary={true} onClick={() => setShowGiving(!showGiving)}>
-            Electronic Giving
-          </Button>
-          {showGiving ? (
-            <>
-              <div
-                tw="mx-auto w-full p-4 leading-loose font-sans items-center justify-center text-center"
-                style={{ maxWidth: 640 }}
-              >
-                <div tw="">Transfer via BCA QR</div>
-                <div tw="font-bold text-2xl">2700427415</div>
-                <div tw="mb-4 font-bold">Firda Meilani Fauziah</div>
-                <img src={QRImage} tw="mx-auto w-80 mb-16 rounded-lg" />
-
-                <div tw="">Transfer via Mandiri</div>
-                <div tw="font-bold text-2xl">1300017806913</div>
-                <div tw="font-bold mb-16">Ardyan Hidayatul Falah</div>
-              </div>
-            </>
-          ) : null}
-        </div>
-      </div>
-      <div tw="py-12  relative">
-        <div tw="absolute -top-24 -right-11 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-20" />
-        <div tw="absolute -top-6 -right-8 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-10" />
-        <div tw="absolute -top-24 right-1 w-24 h-24 bg-contain bg-no-repeat transform rotate-12  bg-daun2 z-0" />
-
-        <div
-          className="container"
-          tw="mx-auto items-center pb-12 px-4 sm:px-0 relative text-center"
-        >
-          <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12 mt-12">
-            Location
-          </div>
-          <div className="title-identity " tw="text-xl font-semibold mb-2">
-            Sarirasa Ayam Kampung Cijere
-          </div>
-          <div className="title-identity " tw="text-xl mb-4 ">
-            Kp Cijere, Desa, RT.06/RW.03, Cintakarya, Sindangkerta
-            <br />
-            Kabupaten Bandung Barat, Jawa Barat 40563
-          </div>
-          <div tw="flex mb-4 items-center justify-center">
-            <div tw="py-4">
-              <Link
-                isPrimary={true}
-                href="https://goo.gl/maps/keZpJcXCbszN7PQbA"
-              >
-                Direction
-              </Link>
+            <div className="advices">Wajib menggunakan masker</div>
+            <div className="advices">
+              Menggunakan salam namaste / salam hangat tanpa bersentuhan
             </div>
-          </div>
-          <div tw="">
-            <div className="google-map">
-              {/* <iframe frameborder="0"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJZVrx5DQo1i0R6sjtcxJobd4" allowfullscreen=""></iframe> */}
-              <Iframe
-                url="https://maps.google.com/maps?q=Sarirasa%20Ayam%20Kampung%20Cijere&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                className="map"
-              />
+            <div className="advices">Saling menjaga jarak di dalam acara</div>
+            <div className="advices">
+              Menjaga kebersihan dengan menggunakan handsanitizer
             </div>
           </div>
         </div>
       </div>
-      <div tw="py-12 bg-white relative">
-        <div tw="absolute -top-24 -left-8 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-30" />
-        <div tw="absolute -top-6 -left-11 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-20" />
-        <div tw="absolute -top-24 -left-6 w-24 h-24 bg-contain bg-no-repeat transform rotate-90  bg-daun2 z-10" />
-
-        <div tw="absolute left-0 right-0 h-10 bg-white" style={{ top: -40 }} />
-        <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12 mt-12">
-          Gallery
+      <div tw="py-24 bg-blues-300 ">
+        <div className="container" tw="mx-auto items-center pb-12 px-4 sm:px-0">
+          <div tw="text-4xl sm:text-5xl font-brittany text-green-100 text-center mb-12 mt-5">
+            Gallery
+          </div>
+          <Grid>
+            {photos.map((i) => (
+              <LazyImage key={i} src={i.src} alt={`Moment Image `} />
+            ))}
+          </Grid>
         </div>
-        <Grid>
-          {photos.map((i) => (
-            <LazyImage key={i} src={i.src} alt={`Moment Image `} />
-          ))}
-        </Grid>
       </div>
-      <div tw="py-12  relative">
+      <div tw="py-12 bg-blues-100  relative">
         <div>
-          <div tw="text-4xl sm:text-5xl font-brittany text-gold-900 text-center mb-12 mt-12">
+          <div tw="text-4xl sm:text-5xl font-brittany text-white text-center mb-12 mt-12">
             Message
           </div>
           <div tw="rounded-b-lg  mx-4 mt-4 ">
-            <div tw="absolute -top-20 -right-12 w-24 h-24 bg-contain bg-no-repeat transform bg-daun4 z-20" />
-            <div tw="absolute -top-2 -right-9 w-24 h-24 bg-contain bg-no-repeat transform rotate-180  bg-daun4 z-10" />
-            <div tw="absolute -top-20 -right-1 w-24 h-24 bg-contain bg-no-repeat transform rotate-12  bg-daun2 z-0" />
-
             <form id="messageForm" onSubmit={handleSubmit(onSubmit)}>
               <input type="hidden" />
               <div tw="font-semibold font-poppin text-sm">
@@ -758,9 +468,8 @@ const App = () => {
                       <tr className="spacer" tw="h-4"></tr>
                       <tr tw="mt-10">
                         <td valign="top">
-                          <div tw="w-8">
-                            {/* <img src={Logo} tw='w-8' width="25px" /> */}
-                            <Logo />
+                          <div tw="w-8 text-white" className="mirror">
+                            <FontAwesomeIcon icon={faComment} tw="mr-1 " />
                           </div>
                         </td>
                         <td className="message" tw="text-left">
@@ -778,15 +487,18 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div tw="py-24 bg-gold-100 relative text-center font-sans">
+      <div tw="py-24 bg-white relative text-center font-sans">
         © 2021 by{' '}
         <a href="https://sonnylab.com" tw="font-semibold">
           sonnylab,
         </a>
         <br />
         Remake by <span tw="font-semibold">Ardyan</span>
-        <div tw="absolute -bottom-6 -right-7 w-28 h-28 bg-cover bg-no-repeat transform -rotate-90  bg-kmbg3 z-10" />
-        <div tw="absolute -bottom-8 -left-4 w-28 h-28 bg-cover bg-no-repeat transform  bg-kmbg3 z-10" />
+        <div
+          className="mirror"
+          tw="absolute -bottom-1 right-2 w-28 h-28 bg-contain bg-no-repeat rotate-0   bg-pohon z-20"
+        />
+        <div tw="absolute -bottom-1 left-2 w-28 h-28 bg-contain bg-no-repeat  rotate-0  bg-pohon z-20" />
       </div>
       {showModal ? <Modal setShowModal={setShowModal} /> : null}
       <Toaster />

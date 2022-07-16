@@ -69,7 +69,7 @@ body {
 }
 
 .message {
-  background-color: #b07c34;
+  background-color: #00aea3;
   color: white;
   padding-left: 8px;
   padding-right: 8px;
@@ -98,7 +98,7 @@ body {
 
 .title-identity {
   font-family: 'dosis';
-  color: #63402f;
+  color: white;
 }
 
 .font-rouge-script {
@@ -155,7 +155,7 @@ body {
 }
 
 .health-advice {
-  background-color: #aa7a32;
+  background-color: #00aea3;
   width: 100%;
   margin: auto;
   box-shadow: 1px 1px 5px #888888;

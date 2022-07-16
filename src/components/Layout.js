@@ -34,12 +34,12 @@ const Layout = ({ children, ...rest }) => {
           },
           {
             property: `og:title`,
-            content: "Official Wedding Website Firda &amp; Ardyan"
+            content: 'Khitanan Imie - Undangan Digital'
           },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
+          {
+            property: `og:type`,
+            content: `website`
+          },
           {
             property: `og:description`,
             content: metaDescription
@@ -77,16 +77,26 @@ const Layout = ({ children, ...rest }) => {
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="google" content="notranslate" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="description" content="Official Wedding Website Firda Meilani Fauziah with Ardyan Hidayatul Falah"/>
-        <meta property="og:title" content="Official Wedding Website Firda &amp; Ardyan"/>
-        <meta property="og:url" content="https://weddinginvitationmain.gatsbyjs.io/"/>
-        <meta property="og:description" content="Official Wedding Website Firda Meilani Fauziah with Ardyan Hidayatul Falah"/>
+        <meta
+          name="description"
+          content="Official Wedding Website Firda Meilani Fauziah with Ardyan Hidayatul Falah"
+        />
+        <meta property="og:title" content="Khitanan Imie - Undangan Digital" />
+        <meta
+          property="og:url"
+          content="https://weddinginvitationmain.gatsbyjs.io/"
+        />
+        <meta property="og:description" content="25 Juli 2022" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Official Wedding Website Firda &amp; Ardyan"></meta>
+        <meta property="og:site_name" content="Undangan Digital"></meta>
         <meta property="og:type" content="website" />
-        <meta property="og:image:type" content="image/jpeg"/>
-        <meta id="og-image" property="og:image" content="https://cdn.discordapp.com/attachments/748172468291764256/919929165195657326/thumbnail.jpg" />
-        <meta property="og:image:width" content="300"/>
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta
+          id="og-image"
+          property="og:image"
+          content="https://i.ibb.co/3C7MqRF/Whats-App-Image-2022-07-10-at-10-16-08-PM-1.jpg"
+        />
+        <meta property="og:image:width" content="300" />
         <meta property="og:image:height" content="300"></meta>
       </Helmet>
       <GlobalStyles />

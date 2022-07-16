@@ -4,8 +4,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Firda Ardyan Wedding`,
-    description: `Firda Ardyan Wedding`,
+    title: `Khitanan Imie - Undangan Digital`,
+    description: `25 Juli 2022`,
     author: `@ardyanfalah`
   },
   plugins: [
