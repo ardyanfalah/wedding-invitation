@@ -24,7 +24,7 @@ import { createClient } from '@supabase/supabase-js'
 import { useForm } from 'react-hook-form'
 import toast, { Toaster } from 'react-hot-toast'
 import styled, { createGlobalStyle } from 'styled-components'
-
+import { onClientEntry } from '../../gatsby-browser'
 import QRImage from '../images/qrbca.png'
 import couple2 from '../images/couple2.png'
 import bismillah from '../images/bismillah.png'
