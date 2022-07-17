@@ -69,7 +69,7 @@ const App = () => {
   const [showGiving, setShowGiving] = React.useState(false)
   const { register, errors, handleSubmit } = useForm()
   const [posts, setPosts] = React.useState([])
-  const [isPlaying, setIsPlaying] = React.useState(false)
+  const [isPlaying, setIsPlaying] = React.useState(true)
 
   const textCopy = 'Salin Nomor Rekening'
   const [copyButtonText, setCopyButtonText] = React.useState(textCopy)
@@ -420,7 +420,7 @@ const App = () => {
       <div tw="py-12 bg-blues-100  relative">
         <div>
           <div tw="text-4xl sm:text-5xl font-brittany text-white text-center mb-12 mt-12">
-            Message
+            Kolom Ucapan
           </div>
           <div tw="rounded-b-lg  mx-4 mt-4 ">
             <form id="messageForm" onSubmit={handleSubmit(onSubmit)}>
