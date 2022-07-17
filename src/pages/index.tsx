@@ -110,33 +110,6 @@ const App = () => {
     return () => supabase.removeSubscription(mySubscription)
   }, [])
 
-  var ObjectRow = React.creat({
-    render: function () {
-      return (
-        <tr>
-          <td>test</td>
-        </tr>
-      )
-    }
-  })
-
-  const masjidRow = () => {
-    return (
-      <div>
-        <div
-          className="mirror"
-          tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
-        />
-        <div tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20" />
-        <div
-          className="mirror"
-          tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
-        />
-        <div tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20" />
-      </div>
-    )
-  }
-
   async function fetchPosts() {
     const { data } = await supabase
       .from('comment')
@@ -258,13 +231,13 @@ const App = () => {
           </div>
         </div>
 
-        <div className="display-xs">
+        {/* <div className="display-xs">
           <div tw=" absolute flex flex-nowrap z-20 h-10 bottom-3">
             {[...Array(5)].map((x, i) => (
-              <ObjectRow key={i + 1} index={i + 1} />
+              <masjidRow key={i + 1} index={i + 1} />
             ))}
           </div>
-        </div>
+        </div> */}
         <div className="display-sm">
           <div tw=" absolute flex flex-nowrap z-20 h-10 bottom-3">
             <div
