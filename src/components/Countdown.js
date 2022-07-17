@@ -41,7 +41,7 @@ const Countdown = () => {
               {timerComponents[0] ? timerComponents[0] : '0'}
             </span>
             <div className="smalltext" tw="text-white">
-              Days
+              Hari
             </div>
           </div>
           <div>
@@ -49,7 +49,7 @@ const Countdown = () => {
               {timerComponents[1]}
             </span>
             <div className="smalltext" tw="text-white">
-              Hours
+              Jam
             </div>
           </div>
           <div>
@@ -57,7 +57,7 @@ const Countdown = () => {
               {timerComponents[2]}
             </span>
             <div className="smalltext" tw="text-white">
-              Minutes
+              Menit
             </div>
           </div>
           <div>
@@ -65,7 +65,7 @@ const Countdown = () => {
               {timerComponents[3]}
             </span>
             <div className="smalltext" tw="text-white">
-              Seconds
+              Detik
             </div>
           </div>
         </div>

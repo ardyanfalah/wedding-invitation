@@ -30,7 +30,8 @@ module.exports = {
         roundedFirda: "url('/images/rounded-firda.png')",
         squareArdy: "url('/images/squar-ardy.png')",
         squareFirda: "url('/images/square-firda.png')",
-        bgimie: "url('/images/bgImie.jpeg')",
+        bgimie:
+          "linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgb(0, 0, 0)),url('/images/bgImie.jpeg')",
         bgimie2:
           "linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgb(0, 0, 0)), url('/images/bgImie2.jpg')",
         ppImie: "url('/images/ppImie.jpeg')",

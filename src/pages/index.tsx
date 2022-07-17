@@ -110,6 +110,33 @@ const App = () => {
     return () => supabase.removeSubscription(mySubscription)
   }, [])
 
+  var ObjectRow = React.creat({
+    render: function () {
+      return (
+        <tr>
+          <td>test</td>
+        </tr>
+      )
+    }
+  })
+
+  const masjidRow = () => {
+    return (
+      <div>
+        <div
+          className="mirror"
+          tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
+        />
+        <div tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20" />
+        <div
+          className="mirror"
+          tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
+        />
+        <div tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20" />
+      </div>
+    )
+  }
+
   async function fetchPosts() {
     const { data } = await supabase
       .from('comment')
@@ -231,28 +258,36 @@ const App = () => {
           </div>
         </div>
 
-        <div tw=" absolute flex flex-nowrap z-20 h-10 bottom-3">
-          <div
-            className="mirror"
-            // tw="absolute -right-8 -bottom-14 w-28 h-28 bg-contain bg-no-repeat rotate-0   bg-masjid z-20"
-            tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
-          />
-          <div
-            // tw="absolute right-20 -bottom-14 w-28 h-28 bg-contain bg-no-repeat rotate-0   bg-masjid z-20"
-            tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
-          />
-
-          <div
-            className="mirror"
-            tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
-
-            // tw="absolute -bottom-14 left-20 w-28 h-28 bg-contain bg-no-repeat  rotate-0  bg-masjid z-20"
-          />
-          <div
-            tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
-
-            // tw="absolute -bottom-14 -left-8 w-28 h-28 bg-contain bg-no-repeat  rotate-0  bg-masjid z-20"
-          />
+        <div className="display-xs">
+          <div tw=" absolute flex flex-nowrap z-20 h-10 bottom-3">
+            {[...Array(5)].map((x, i) => (
+              <ObjectRow key={i + 1} index={i + 1} />
+            ))}
+          </div>
+        </div>
+        <div className="display-sm">
+          <div tw=" absolute flex flex-nowrap z-20 h-10 bottom-3">
+            <div
+              className="mirror"
+              tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
+            />
+            <div tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20" />
+            <div
+              className="mirror"
+              tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
+            />
+            <div tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20" />
+            <div
+              className="mirror"
+              tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
+            />
+            <div tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20" />
+            <div
+              className="mirror"
+              tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20"
+            />
+            <div tw=" w-28 h-28 bg-contain bg-no-repeat bg-masjid z-20" />
+          </div>
         </div>
       </div>
       <div tw="py-24 bg-blues-200 relative min-h-screen">
@@ -354,10 +389,10 @@ const App = () => {
           ) : null}
         </div>
       </div>
-      <div tw="py-24 justify-center relative bg-bgimie2 bg-cover bg-center bg-no-repeat  h-4/5">
+      <div tw="py-24 justify-center relative flex bg-bgimie2 bg-cover bg-center bg-no-repeat  h-4/5">
         <div
           className="container"
-          tw=" pb-12 px-4 sm:px-0 place-items-center flex h-96"
+          tw=" pb-12 px-4 sm:px-0 place-items-center justify-start h-96"
         >
           <div
             className="container"
@@ -488,12 +523,12 @@ const App = () => {
         </div>
       </div>
       <div tw="py-24 bg-white relative text-center font-sans">
-        © 2021 by{' '}
+        © 2022 by{' '}
         <a href="https://sonnylab.com" tw="font-semibold">
           sonnylab,
         </a>
         <br />
-        Remake by <span tw="font-semibold">Ardyan</span>
+        Remake by <span tw="font-semibold">Ardyan & Firda</span>
         <div
           className="mirror"
           tw="absolute -bottom-1 right-2 w-28 h-28 bg-contain bg-no-repeat rotate-0   bg-pohon z-20"
